@@ -1,0 +1,62 @@
+
+<div class="ProfilePatient_medical_examination_schedule_right">
+    <div class="ProfilePatient_right_title">
+        <h5>
+            Lịch khám
+        </h5>        
+    </div>
+    <div class="ProfilePatient_right_content">
+        <div class="ProfilePatient_right_content_left">
+            <form >
+                <input type="text" placeholder="Mã giao dịch, tên dịch vụ, tên bệnh nhân">
+            </form>
+             
+            <div class="ProfilePatient_right_content_card_scroll">
+                <div class="ProfilePatient_right_content_card_scroll_container">
+                    
+                    <div class="ProfilePatient_right_content_card" *ngFor="let item of listdata">
+                        <div class="ProfilePatient_right_content_card_left" (click)="submitdata(item)">
+                            <p>
+                                {{item.doctorName}}
+                            </p>
+                            <p >
+                                08:00 - {{item.scheduleDay|date:'MMM d, y'}}
+                            </p>
+                            <p >
+                                {{item.patientFileName}}
+                            </p>
+                            <div *ngIf="item.appointmentStatus==0" class="ProfilePatient_right_content_card_failure-status" >
+                                <p style="background-color: rgb(240,253,244);color: rgb(34,197,94);">
+                                    Thành Công
+                                </p>
+                            </div>
+                            <div *ngIf="item.appointmentStatus==2" class="ProfilePatient_right_content_card_failure-status" >
+                                <p style="background-color: rgb(237,237,166);color: rgb(225,172,67)">
+                                    Đã đặt lịch
+                                </p>
+                            </div>
+                            <div *ngIf="item.appointmentStatus==1" class="ProfilePatient_right_content_card_failure-status" >
+                                <p style="background-color: rgb(205, 110, 132);color: rgb(195,0,47)">
+                                    Bị từ chối
+                                </p>
+                            </div>
+                            <div *ngIf="item.appointmentStatus==3" class="ProfilePatient_right_content_card_failure-status" >
+                                <p style="background-color: rgb(249,250,251);color: rgb(107,114,128)">
+                                    Đã Hủy
+                                </p>
+                            </div>
+                        </div>
+                        <div class="ProfilePatient_right_content_card_right">
+                            <span>STT</span>
+                            <p>{{item.stt}}</p>
+                        </div>
+                    </div>
+                  
+
+                </div>
+            </div>
+           
+        </div>
+        <app-scheduleresult style="width: 100%;" [dataDetail]="dataCurrent" ></app-scheduleresult>
+    </div>
+</div>

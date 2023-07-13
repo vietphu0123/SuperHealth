@@ -1,0 +1,787 @@
+body {
+    height: auto;
+}
+
+.main {
+    margin-top: 54px;
+    background-color: #d9ebef;
+    min-height: 50vh;
+    padding: 20px 0;
+}
+
+/* Overlay */
+.main .overlay-main.active {
+    display: flex;
+}
+
+.main .overlay-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-main .close-img-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 36px;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 10000000000;
+}
+
+.overlay-main .pre-img-btn {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    color: #fff;
+    font-size: 36px;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 10000000000;
+    padding: 8px 10px;
+    background-color: #000;
+}
+
+.overlay-main .next-img-btn {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    color: #fff;
+    font-size: 36px;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 10000000000;
+    padding: 10px 10px;
+    background-color: #000;
+}
+
+/* End overlay */
+
+.main .overlay-main img {
+    width: 800px;
+    height: 500px;
+}
+
+.doctor-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.appointment-doctor-content {
+    background-color: #fff;
+    border-radius: 8px 8px 0 0;
+    padding: 20px
+}
+
+.doctor-info-img img {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    height: 180px;
+}
+
+.doctor-info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.doctor-info-text h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.doctor-info-text h2 {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: var(--PrimaryColor);
+}
+
+.doctor-info-text h2>svg {
+    margin-bottom: 1px;
+}
+
+.doctor-info-text h2>span {
+    color: var(--Black);
+    padding: 0 7px;
+    margin: 0 8px;
+    border-left: 1px solid var(--LightGray);
+}
+
+.doctor-info-text ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.doctor-info-text ul li {
+    display: flex;
+    padding: 4px 0;
+}
+
+.doctor-info-text ul li div {
+    min-width: 100px;
+}
+
+.doctor-info-text ul li a {
+    text-decoration: none;
+    color: var(--PrimaryColor);
+    font-weight: 500;
+}
+
+
+
+/* book-appointment */
+.book-appointment {
+    position: relative;
+}
+
+.book-appointment>p {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.book-appointment-date {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.book-appointment-date li.active {
+    background-color: var(--LightBlue);
+}
+
+.book-appointment-date li {
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 5px solid transparent;
+    cursor: pointer;
+}
+
+.book-appointment-date li:hover {
+    background-color: var(--LightBlue);
+    border-color: rgba(194, 53, 100, 0.1);
+}
+
+.book-appointment-date li p {
+    width: 138px;
+    text-align: center;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.book-appointment-date li span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: #1cb366;
+}
+
+.control-btn {
+    position: relative;
+}
+
+.control-btn .pre-btn {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 6px 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid var(--Gray);
+    background-color: #fff;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.control-btn .next-btn {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 6px 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid var(--Gray);
+    background-color: #fff;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.control-btn .down-btn {
+    position: absolute;
+    top: -43px;
+    right: 0;
+    padding: 4px 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #fff;
+    z-index: 100;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.control-btn .down-btn.active {
+    transform: rotate(180deg);
+    background-color: var(--PrimaryColor);
+    color: #fff;
+}
+
+/* horizontal-bar */
+.book-appointment-date .horizontal-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    border-radius: 15px;
+    background-color: var(--PrimaryColor);
+    transition: all 0.2s ease;
+}
+
+
+/* .book-appointment-time */
+
+.book-appointment-time {
+    list-style: none;
+    padding: 0;
+}
+
+/* time */
+
+.book-appointment-time li.active {
+    display: block;
+}
+
+.book-appointment-time li {
+    display: none;
+}
+
+.book-appointment-time li .time {
+    display: flex;
+    align-items: center;
+}
+
+.book-appointment-time li .time p {
+    width: 100px;
+    margin: 0;
+}
+
+.book-appointment-time li .time .line {
+    height: 1px;
+    background-color: var(--Gray);
+    flex-grow: 1;
+}
+
+.book-appointment-time li .time i {
+    color: var(--PrimaryColor);
+}
+
+/* time slot */
+.book-appointment-time li .time-slot {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-appointment-time li .time-slot a {
+    display: block;
+    text-align: center;
+}
+
+.book-appointment-time li .time-slot div {
+    padding: 8px 15px;
+}
+
+/* doctor-introduce */
+.doctor-introduce .doctor-introduce-heading {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.doctor-introduce-section ul li {
+    padding: 8px;
+}
+
+.specialize-btn {
+    border-radius: 20px;
+}
+
+/* chuyên khoa */
+.section-specialize .section-specialize-map {
+    position: relative;
+    padding-left: 0;
+}
+
+.section-specialize .section-specialize-map img {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.section-specialize-img p {
+    font-weight: 500;
+}
+
+.section-specialize-img .wrap-img {
+    display: flex;
+    height: 160px;
+    overflow: hidden;
+}
+
+.section-specialize-img .wrap-img>div {
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+    padding-right: 0;
+}
+
+.section-specialize-img .wrap-img>div>img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.section-specialize-img .wrap-img .other-img div {
+    width: 100%;
+    height: 100%;
+    background-color: var(--LightGray);
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* end */
+
+.section-specialize .section-specialize-map>a>div {
+    position: absolute;
+    padding: 24px;
+    top: 0%;
+    color: #000;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.section-specialize .section-specialize-map div h2 {
+    font-size: 18px;
+    color: #000;
+}
+
+.section-specialize .section-specialize-map div h3 {
+    font-size: 16px;
+    color: #000;
+}
+
+.make-an-appointment {
+    border-top: 1px solid var(--LightGray);
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    position: sticky;
+    bottom: 0;
+}
+
+.make-an-appointment-help {
+    padding-right: 20px;
+}
+
+.make-an-appointment-help a {
+    text-decoration: none;
+    color: #000;
+}
+
+.make-an-appointment-help a p {
+    margin: 0;
+}
+
+.make-an-appointment-help a:hover {
+    text-decoration: none;
+    color: var(--PrimaryColor);
+}
+
+.make-an-appointment-btn {
+    flex-grow: 1;
+}
+
+.make-an-appointment-btn a {
+    flex-grow: 1;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 530px) {
+    .doctor-info-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .doctor-info-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0;
+    }
+}
+
+.nav-appointment {
+    padding: 20px 0;
+}
+
+.nav-appointment a {
+    color: #000;
+}
+
+.nav-appointment span {
+    padding: 6px 10px;
+    background-color: #35cf35;
+    color: #fff;
+}
+
+.nav-appointment a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+/* .make-an-appointment-info {
+    height: fit-content;
+    border-radius: 0 0 8px 8px;
+} */
+
+
+
+
+.appointment-doctor-content.active {
+    height: fit-content;
+    border-radius: 8px;
+}
+
+.appointment-common .heading {
+    color: var(--PrimaryColor);
+    font-weight: 500;
+}
+
+.appointment-common .heading span {
+    padding: 3px 8px;
+    border-radius: 50%;
+    background-color: var(--PrimaryColor);
+    color: #fff;
+}
+
+.make-an-appointment-info {
+    display: flex;
+}
+
+.doctor-information {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.doctor-information p {
+    margin: 0;
+}
+
+.doctor-information>p {
+    font-weight: 500;
+    border-bottom: 1px solid var(--LightGray);
+    padding-bottom: 10px;
+}
+
+.doctor-information>div {
+    display: flex;
+    padding: 10px 0;
+}
+
+.doctor-information .doctor-information-detail {
+    border-bottom: 1px solid var(--LightGray);
+}
+
+.img-doctor-info {
+    width: 80px;
+    height: 60px;
+    padding: 0;
+}
+
+.img-doctor-info img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.doctor-information>div .text-doctor-info {
+    padding-left: 10px;
+}
+
+.doctor-information>div .text-doctor-info p {
+    font-size: 14px;
+}
+
+.doctor-information>div .text-doctor-info p:nth-child(2) {
+    font-size: 12px;
+}
+
+.success-appointments-btn.active a {
+    background-color: var(--PrimaryColor);
+    cursor: pointer;
+}
+
+.success-appointments-btn a {
+    width: 100%;
+    text-align: center;
+    background-color: var(--LightGray);
+    cursor: not-allowed;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.success-appointments-btn a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 991px) {
+    .wrap-doctor-information {
+        display: none;
+    }
+}
+
+/* Thông tin bệnh nhân */
+.wrap-patient-info {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.patient-info {
+    border-top: 1px solid var(--LightGray);
+    padding: 10px 0;
+}
+
+.patient-info-wrap {
+    max-height: 280px;
+    overflow-x: auto;
+}
+
+.patient-info-detail {
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    margin: 10px 0;
+}
+
+.patient-info-detail.active {
+    border: 2px solid var(--PrimaryColor);
+}
+
+.patient-info-general {
+    display: flex;
+    align-items: center;
+}
+
+.patient-info-general-text p {
+    margin: 0 0 0 10px;
+}
+
+.patient-info-detail-downbtn {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+
+.patient-info-detail-text.active {
+    display: block;
+}
+
+.patient-info-detail-text {
+    padding: 10px;
+    display: none;
+}
+
+.patient-info-detail-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.patient-info-detail-text ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--LightGray);
+}
+
+.patient-info-detail-text ul li p {
+    margin: 0;
+}
+
+.patient-info-detail-text button {
+    background-color: #fff;
+    overflow: none;
+    color: var(--PrimaryColor);
+}
+
+.patient-info-detail-text button:focus {
+    outline: none;
+}
+
+.patient-more-information>p {
+    margin: 0;
+    padding-top: 16px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.patient-more-information textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.patient-more-information textarea:focus {
+    outline: 2px solid var(--PrimaryColor);
+    border: 1px solid transparent;
+}
+
+.patient-more-information-file {
+    background-color: var(--LightGray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed var(--Black);
+    cursor: pointer;
+}
+
+.patient-more-information-file p {
+    margin: 0;
+}
+
+.patient-more-information-file p span {
+    color: var(--PrimaryColor);
+}
+
+.patient-more-information-file:hover {
+    border: 1px dashed var(--PrimaryColor);
+}
+
+.patient-more-information-file input {
+    display: none;
+}
+
+.nav-patient {
+    display: flex;
+    color: var(--Black);
+    align-items: center;
+    padding: 20px 0;
+}
+
+.nav-patient div {
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    margin: 0 10px;
+}
+
+.nav-patient a {
+    color: #000;
+}
+
+.nav-patient a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-1-patient>span {
+    padding: 6px 8px;
+    background-color: var(--PrimaryColor);
+    color: #fff;
+}
+
+.nav-2-patient>span {
+    padding: 6px 11px;
+    background-color: #35cf35;
+    color: #fff;
+}
+
+.medical-booking-information ul {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.medical-booking-information ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.medical-booking-information ul li p {
+    font-weight: 500;
+}
+
+/*  */
+
+.patient-info-general-img {
+    position: relative;
+}
+
+.ProfilePatient_right_content_card_name {
+    position: absolute;
+    top: 32%;
+    left: 22%;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgb(22, 183, 235);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.patient-info-general-img span {
+    position: absolute;
+    background-color: rgb(156, 163, 175);
+    border-radius: 12px;
+    font-size: 12px;
+    color: #fff;
+    padding: 0px 4px;
+    top: 2px;
+    right: 2px;
+}

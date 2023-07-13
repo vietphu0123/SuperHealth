@@ -1,0 +1,147 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <div class="nav-patient">
+            <a class="nav-1-patient" [routerLink]="['/doctorList','doctor-info', 'make-an-appointment', info.doctorId]">
+                <span><i class="fa-solid fa-check"></i></span>
+                Thời gian khám
+
+            </a>
+            <div></div>
+            <a class="nav-2-patient" style="cursor: pointer;">
+                <span>2</span>
+                Bệnh nhân
+            </a>
+        </div>
+        <div class="make-an-appointment-info">
+            <div class="col-lg-8" style="padding: 0;">
+                <div class="appointment-doctor-content active">
+                    <div class="make-an-appointment-date appointment-common">
+                        <a [routerLink]="['/doctorList','doctor-info', 'make-an-appointment', info.doctorId]"
+                            style="text-decoration: none;">
+                            <p class="heading"><span>1</span> Ngày và giờ khám</p>
+                        </a>
+                        <div class="control-btn">
+                            <div class="down-btn"><i class="fa-solid fa-angle-down"></i></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="wrap-patient-info">
+                    <div class="appointment-common">
+                        <p class="heading"><span>2</span> Hồ sơ bệnh nhân</p>
+                    </div>
+                    <div class="patient-info">
+                        <div class="patient-info-wrap">
+
+                            <div class="patient-info-detail" *ngFor="let data of listdata" (click)="SubmitData(data)">
+                                <div class="patient-info-general">
+                                    <div class="patient-info-general-img">
+                                        <img src="../../../../../../assets/images/ProfilePatient/Family-Block.svg">
+                                        <div class="ProfilePatient_right_content_card_tag_circle"></div>
+                                        <div class="ProfilePatient_right_content_card_name">
+                                            {{ConvertPatientName(data.patientName)}}</div>
+                                        <span>{{data.relationShip}}</span>
+                                    </div>
+                                    <div class="patient-info-general-text">
+                                        <p><b>{{data.patientName}}</b></p>
+                                        <p>{{data.dateOfBirth | date:'dd/MM/yyyy'}}</p>
+                                    </div>
+                                    <div class="patient-info-detail-downbtn"><i class="fa-solid fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="patient-info-detail-text">
+                                    <ul>
+                                        <li>
+                                            <p>Mã bệnh nhân</p>
+                                            <p>YMP23247003</p>
+                                        </li>
+                                        <li>
+                                            <p>Họ và tên</p>
+                                            <p>{{data.patientName}}</p>
+                                        </li>
+                                        <li>
+                                            <p>Giới tính</p>
+                                            <p>{{(data.gender == '1') ? 'Nam' : (data.gender
+                                                ==
+                                                '2') ? 'Nữ' : '--'}}</p>
+                                        </li>
+                                        <li>
+                                            <p>Ngày sinh</p>
+                                            <p>{{data.dateOfBirth | date:'dd/MM/yyyy'}}</p>
+                                        </li>
+                                        <li>
+                                            <p>Số điện thoại</p>
+                                            <p>{{data.phoneNumber}}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="patient-more-information">
+                            <p>Thông tin bổ sung (không bắt buộc)</p>
+                            <p>Ghi chú</p>
+                            <textarea name="" id="" rows="3" cols="300" #note
+                                placeholder="Triệu chứng, thuốc đang dùng, tiểu sử, ..."></textarea>
+
+
+                            <!-- <p>Tập tin đính kèm (0/5)</p>
+                            <div class="patient-more-information-file">
+                                <p><span>Chọn tập tin</span> hoặc kéo thả vào đây</p>
+                                <p>.PNG, .JPG tối đa 15MB</p>
+                                <input type="file" max="5">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-doctor-information col-lg-4">
+                <div class="doctor-information">
+                    <p>Thông tin đặt khám</p>
+                    <div class="doctor-information-detail">
+                        <div class="img-doctor-info">
+                            <img src="{{info.avatarDoctor ? info.avatarDoctor : '../assets/images/avatarDoctor.png'}}" alt="Avatar">
+                        </div>
+                        <div class="text-doctor-info">
+                            <p><b>{{info.doctorName}}</b></p>
+                            <p>{{info.addressDoctor}}</p>
+                        </div>
+                    </div>
+                    <div class="medical-booking-information">
+                        <ul>
+                            <li>
+                                <p>Ngày khám</p>
+                                <p>{{info.scheduleDate | date:'dd/MM/yyyy'}}</p>
+                            </li>
+                            <li>
+                                <p>Khung giờ</p>
+                                <p>{{info.timeFrame}}</p>
+                            </li>
+                            <li>
+                                <p>Bệnh nhân</p>
+                                <p>{{data.patientName}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="success-appointments-btn active">
+                        <a href="http://127.0.0.1:5500/group3_mockproject/Client/Html/doctor/doctor-booking.html">
+                            Xác nhận đặt khám
+                        </a>
+                    </div> -->
+                    <button style="width: 100%;
+                    text-align: center;
+                    background-color: var(--PrimaryColor);;
+                    cursor: pointer;
+                    padding: 10px;
+                    text-decoration: none;
+                    color: #fff;
+                    border-radius: 4px; border: none; outline: none;" (click)="CreateAppointment(note.value)">
+                        Xác nhận đặt khám
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,46 @@
+<div class="spinner-wrap" *ngIf="loading==true">
+    <div class="spinner-border text-primary" role="status">
+        <span class="loader"></span>
+    </div>
+</div>
+<div mat-dialog-title>
+    <h1 style="text-align:  center;">{{data ? "Cập nhật chuyên khoa" : "Thêm mới chuyên khoa"}}</h1>
+</div>
+<form [formGroup]="specialtyForm" (ngSubmit)="AddSpecialty()">
+    <div mat-dialog-content>
+        <div>
+            <mat-form-field appearance="outline" style="padding: 10px 0; width: 500px;">
+                <mat-label>Chuyên khoa</mat-label>
+                <input placeholder="Chuyên khoa" type="text" formControlName="SpecialtyName" matInput>
+                <mat-error
+                    *ngIf="specialtyForm.controls['SpecialtyName'].invalid && specialtyForm.controls['SpecialtyName'].dirty || specialtyForm.controls['SpecialtyName'].touched">
+                    <span class="text-danger" *ngIf="specialtyForm.controls['SpecialtyName'].errors?.['required']">*Phải
+                        nhập
+                        tên chuyên khoa
+                    </span>
+                </mat-error>
+            </mat-form-field>
+            <!-- <div
+                *ngIf="specialtyForm.controls['SpecialtyName'].invalid && specialtyForm.controls['SpecialtyName'].dirty || specialtyForm.controls['SpecialtyName'].touched">
+                <div class="text-danger" *ngIf="specialtyForm.controls['SpecialtyName'].errors?.['required']">Phải nhập
+                    tên chuyên khoa
+                </div>
+            </div> -->
+        </div>
+        <!-- <input type="file" (change)="onFileChange($event)"> -->
+        <div class="uploadOuter">
+            <span class="dragBox">
+                <span>Chọn tập tin</span> hoặc kéo thả vào đây
+                <input type="file" (change)="dragNdrop($event)" ondragover="drag()" ondrop="drop()" id="uploadFile" />
+            </span>
+        </div>
+        <div id="preview">
+            <img [src]="specialtyForm.value.Image" alt="">
+        </div>
+    </div>
+    <div mat-dialog-actions style="display: flex; justify-content: center;">
+        <button type="submit" mat-raised-button color="primary" [disabled]="specialtyForm.invalid">{{data ? "Cập nhật" :
+            "Thêm mới"}}</button>
+        <button type="button" mat-raised-button (click)="closeAddSpecialty()">Hủy</button>
+    </div>
+</form>

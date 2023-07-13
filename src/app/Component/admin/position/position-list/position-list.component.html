@@ -1,0 +1,80 @@
+
+<h1 class="h3 mb-2 text-gray-800">Chức vụ</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-primary">Danh sách các chức vụ</h4>
+    </div>
+    <div class="card-body">
+        <button mat-raised-button color="primary" style="margin-bottom: 10px;" (click)="openAddPosition()" >
+            +
+            Thêm chức vụ</button>
+        <div class="table-responsive">
+            <div class="specialty-actions">
+                <div class="col-lg-5 col-xl-4">
+                    Hiện thị
+                    <select (change)="handlePageSizeChange($event)">
+                        <option *ngFor="let size of pageSizes" [ngValue]="size">
+                            {{ size }}
+                        </option>
+                    </select>
+                    bản ghi
+                </div>
+                <div class="col-lg-5 col-xl-4">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm theo tên chức vụ"
+                        [(ngModel)]="search" (input)="handleSearchChange($event)" />
+                </div>
+            </div>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <!-- <th>Mã chuyên khoa</th> -->
+                        <th>Tên chức vụ</th>
+                        <!-- <th>Tạo bởi</th> -->
+                        <th>Tạo ngày</th>
+                        <!-- <th>Cập nhật bởi</th> -->
+                        <th>Cập nhật ngày</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <!-- <th>Mã chuyên khoa</th> -->
+                        <th>Tên chức vụ</th>
+                        <!-- <th>Người tạo</th> -->
+                        <th>Tạo ngày</th>
+                        <!-- <th>Cập nhật bởi</th> -->
+                        <th>Cập nhật ngày</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr *ngFor="let position of positionList | paginate: {
+                        itemsPerPage: pageSize, currentPage: page, totalItems: total
+                    }">
+                        <!-- <td><span>{{specialty.id}}</span></td> -->
+                        <td>{{position.positionName}}</td>
+                        <!-- <td>{{position.createdBy}}</td> -->
+                        <td>{{position.createTime | date:'dd/MM/yyyy'}}</td>
+                        <!-- <td>{{position.updatedBy}}</td> -->
+                        <td>{{position.updateTime | date:'dd/MM/yyyy'}}</td>
+                        <td>
+                            <button mat-raised-button color="primary" (click)="openEditPosition(position)">
+
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button> |
+                            <button mat-raised-button color="warn" (click)="openDeletePosition(position)">
+
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="specialty-pagination">
+            <pagination-controls previousLabel="Trang trước" nextLabel="Trang sau" (pageChange)="pageChange($event)"
+                class="my-pagination"></pagination-controls>
+        </div>
+    </div>
+</div>

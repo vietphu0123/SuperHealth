@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+html {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --PrimaryColor: #4D8DFF;
+    --Black: #333;
+    --Gray: #b3b3b3;
+    --White: #fff;
+    --LightGray: #ebe8e8;
+    --LightBlue: #e7f9ff;
+}
+
+.common-btn {
+    border: 1px solid var(--PrimaryColor);
+    padding: 8px 11px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.common-btn:hover {
+    text-decoration: none !important;
+    background-color: var(--PrimaryColor);
+    color: var(--White);
+}
+
+body.active {
+    overflow: hidden;
+}
+
+body {
+    height: 200vh;
+}
+
+/* end common */

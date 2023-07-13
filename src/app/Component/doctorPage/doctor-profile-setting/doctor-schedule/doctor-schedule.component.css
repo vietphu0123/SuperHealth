@@ -1,0 +1,312 @@
+.headPage-container {
+  background: #f2f6f6;
+  background-repeat: no-repeat;
+  padding-top: 70px;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.headPage-title {
+  margin-bottom: 35px;
+  font-size: 60px;
+}
+.page-headPage {
+  display: block;
+}
+.headPage {
+  background-color: transparent;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  display: inline-flex;
+  list-style: none;
+}
+.headPage-item {
+  font-weight: 500;
+  color: #1f2937;
+  padding-left: 10px;
+}
+/*  */
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+._header {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+/* CONTENT */
+.left-content {
+  transform: none;
+  min-height: 451.906px;
+  padding: 80px 0 60px;
+}
+.left-sidebar {
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  min-height: 1px;
+}
+.left-sidebar-inside {
+  padding-top: 0px;
+  padding-bottom: 1px;
+  position: static;
+  transform: none;
+  top: 0px;
+  left: 182px;
+}
+.profile-sidebar {
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-right: 20px ;
+}
+.pro-widget-content {
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+.profile-info-widget {
+  display: block !important;
+  text-align: center !important;
+}
+
+.profile-info-widget .booking-doc-img {
+  display: inline-block;
+  width: auto;
+  background-color: #f7f7f7;
+  margin: 0 0 15px !important;
+  padding: 8px;
+  border-radius: 50%;
+}
+.booking-doc-img img {
+  height: 120px !important;
+  width: 120px !important;
+  border-radius: 50% !important;
+}
+
+.profile-des-info {
+  overflow: hidden;
+}
+.profile-des-info h3 {
+  font-size: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.profile-des-info .patient-details h5 {
+  color: #757575;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+a {
+  text-decoration: none;
+}
+.dashboard-menu ul {
+  color: #757575;
+  font-size: 14px;
+  line-height: 17px;
+  list-style: none;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+}
+.dashboard-menu > ul > li {
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+.profile-sidebar .dashboard-menu > ul > li a {
+  color: #757575;
+  display: block;
+  padding: 16px 20px;
+}
+.dashboard-menu ul li {
+  line-height: inherit;
+}
+
+
+/* Modal styles */
+.modal .modal-dialog {
+max-width: 400px;
+  margin: auto;
+  margin-top: 10%;
+}
+.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+padding: 20px 30px;
+}
+.modal .modal-content {
+border-radius: 3px;
+font-size: 14px;
+}
+.modal .modal-footer {
+background: #ecf0f1;
+border-radius: 0 0 3px 3px;
+}
+.modal .modal-title {
+display: inline-block;
+}
+.modal .form-control {
+padding-left: 10px;
+border-radius: 2px;
+box-shadow: none;
+border-color: #dddddd;
+}
+.modal textarea.form-control {
+resize: vertical;
+}
+.modal .btn {
+border-radius: 2px;
+min-width: 100px;
+}	
+.modal form label {
+font-weight: normal;
+}	
+
+
+
+/*  */
+body {
+
+  color: #566787;
+  background: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+}
+.table-responsive {
+  margin: 0;
+}
+.table-wrapper {
+  min-width: 1000px;
+  background: #fff;
+  padding: 0 20px 50px 20px ;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+  padding-bottom: 10px;
+  margin: 0 0 10px;
+  min-width: 100%;
+}
+.table-title h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+}
+.search-box {
+  position: relative;        
+  float: right;
+}
+.search-box input {
+  height: 34px;
+  border-radius: 20px;
+  padding-left: 35px;
+  border-color: #ddd;
+  box-shadow: none;
+}
+.search-box input:focus {
+  border-color: #3FBAE4;
+}
+.search-box i {
+  color: #a0a5b1;
+  position: absolute;
+  font-size: 19px;
+  top: 8px;
+  left: 10px;
+}
+table.table tr th, table.table tr td {
+  border-color: #e9e9e9;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+  background: #f5f5f5;
+}
+table.table th i {
+  font-size: 13px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+table.table td:last-child {
+  width: 130px;
+}
+table.table td a {
+  color: #a0a5b1;
+  display: inline-block;
+  margin: 0 5px;
+}
+table.table td a.view {
+  color: #03A9F4;
+}
+table.table td a.edit {
+  color: #FFC107;
+}
+table.table td a.delete {
+  color: #E34724;
+}
+table.table td i {
+  font-size: 19px;
+}    
+.pagination {
+  float: right;
+  margin: 0 0 5px;
+}
+.pagination li a {
+  border: none;
+  font-size: 95%;
+  width: 30px;
+  height: 30px;
+  color: #999;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 30px !important;
+  text-align: center;
+  padding: 0;
+}
+.pagination li a:hover {
+  color: #666;
+}	
+.pagination li.active a {
+  background: #03A9F4;
+}
+.pagination li.active a:hover {        
+  background: #0397d6;
+}
+.pagination li.disabled i {
+  color: #ccc;
+}
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px
+}
+.hint-text {
+  float: left;
+  margin-top: 6px;
+  font-size: 95%;
+}    
+
+
+.schedule-pagination {
+display: flex;
+justify-content: center;
+}
+
+.schedule-pagination .ngx-pagination {
+padding: 0 !important;
+}
+.schedule-actions {
+display: flex;
+justify-content: space-between;
+padding: 10px 0;
+flex-wrap: wrap;
+}

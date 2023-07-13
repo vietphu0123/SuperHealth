@@ -1,0 +1,15 @@
+.specialty-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    flex-wrap: wrap;
+}
+
+.specialty-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.specialty-pagination .ngx-pagination {
+    padding: 0 !important;
+}

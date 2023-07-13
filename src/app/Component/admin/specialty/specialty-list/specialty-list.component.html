@@ -1,0 +1,79 @@
+<h1 class="h3 mb-2 text-gray-800">Chuyên khoa</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-primary">Danh sách các chuyên khoa</h4>
+    </div>
+    <div class="card-body">
+        <button mat-raised-button color="primary" style="margin-bottom: 10px;" (click)="openAddSpecialty()">
+            +
+            Thêm chuyên
+            khoa</button>
+        <div class="table-responsive">
+            <div class="specialty-actions">
+                <div class="col-lg-5 col-xl-4">
+                    Hiện thị
+                    <select (change)="handlePageSizeChange($event)">
+                        <option *ngFor="let size of pageSizes" [ngValue]="size">
+                            {{ size }}
+                        </option>
+                    </select>
+                    bản ghi
+                </div>
+                <div class="col-lg-5 col-xl-4">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm theo tên chuyên khoa"
+                        [(ngModel)]="search" (input)="handleSearchChange($event)" />
+                </div>
+            </div>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <!-- <th>Mã chuyên khoa</th> -->
+                        <th>Tên chuyên khoa</th>
+                        <!-- <th>Tạo bởi</th> -->
+                        <th>Tạo ngày</th>
+                        <!-- <th>Cập nhật bởi</th> -->
+                        <th>Cập nhật ngày</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <!-- <th>Mã chuyên khoa</th> -->
+                        <th>Tên chuyên khoa</th>
+                        <!-- <th>Người tạo</th> -->
+                        <th>Tạo ngày</th>
+                        <!-- <th>Cập nhật bởi</th> -->
+                        <th>Cập nhật ngày</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr *ngFor="let specialty of specialtyList | paginate: {
+                        itemsPerPage: pageSize, currentPage: page, totalItems: total
+                    }">
+                        <!-- <td><span>{{specialty.id}}</span></td> -->
+                        <td><img [src]="specialty.image" alt="" width="50px" height="50px">{{specialty.specialtyName}}
+                        </td>
+                        <!-- <td>{{specialty.createdBy}}</td> -->
+                        <td>{{specialty.createTime | date:'dd/MM/yyyy'}}</td>
+                        <!-- <td>{{specialty.updatedBy}}</td> -->
+                        <td>{{specialty.updateTime | date:'dd/MM/yyyy'}}</td>
+                        <td>
+                            <button mat-raised-button color="primary" (click)="openEditSpecialty(specialty)">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button> |
+                            <button mat-raised-button color="warn" (click)="openDeleteSpecialty(specialty)">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="specialty-pagination">
+            <pagination-controls previousLabel="Trang trước" nextLabel="Trang sau" (pageChange)="pageChange($event)"
+                class="my-pagination"></pagination-controls>
+        </div>
+    </div>
+</div>

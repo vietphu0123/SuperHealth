@@ -1,0 +1,46 @@
+ 
+<app-header></app-header>
+<div class="ProfilePatient">
+    <div class="container container_padding">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="ProfilePatient_left">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="/patient/profile/schedule" class="medical_examination_schedule">
+                                    Lịch Khám
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/patient/profile/payment" class="history_pay">
+                                    Lịch sử thanh toán
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/patient/profile/infor" class="file">
+                                    Hồ sơ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/patient/profile/account" class="account">
+                                    Tài khoản
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="sigout" (click)="handleClick()">
+                                    Đăng xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-6" >
+                <router-outlet></router-outlet>
+            <div class="ProfilePatient_sigout_right"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

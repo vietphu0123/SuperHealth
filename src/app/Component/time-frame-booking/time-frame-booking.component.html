@@ -1,0 +1,18 @@
+<ul class="book-appointment-time">
+    <li class="active" *ngIf="timeFrameList != null">
+        <!-- <div class="time">
+            <p><i class="fa-solid fa-sun"></i> Buổi sáng</p>
+            <div class="line"></div>
+        </div> -->
+        <div class="time-slot">
+            <div class="col-lg-2 col-md-3 col-sm-4" *ngFor="let item of timeFrameList">
+                <a class="common-btn" [routerLink]="['/dat-kham', item.id]">
+                    {{item.from}} - {{item.to}}
+                </a>
+            </div>
+        </div>
+    </li>
+    <li class="active" *ngIf="timeFrameList == null">
+        <p>Không có khung thời gian nào</p>
+    </li>
+</ul>

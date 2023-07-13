@@ -1,0 +1,566 @@
+
+/* DOCTOR APOINTMENT HOMEPAGE*/
+.doctor-tag{
+    /* display: flex; */
+    margin-top: 30px;
+}
+.name-page{
+    margin-top: 30px;
+}
+.doctor-tag-item{
+    width: 100%;
+    height:  170px;
+    border: 1px solid #F1F5F9;
+    display: block;
+    padding: 5px;
+}
+.doctor-tag-inside:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.doctor-tag-sub-item{
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+.doctor-tag-sub-item-left{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.doctor-tag-sub-item-right{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.doctor-sign{
+    font-size: 15px;
+}
+.doctor-name{
+    text-decoration: none;
+}
+.doctor-tag-sub-item-right p{
+   font-size: 15px;
+}
+.doctor-tag-apointment{
+    width: 100px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+.btn-apointment{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #F3F8FE;
+    color: #3093F3;
+    cursor: pointer;
+}
+
+.disease-icon{
+    width: 40%;
+    height: 80%;
+    margin: auto;
+}
+
+.disease{
+    display: grid;
+    margin-bottom: 20px;
+}
+.disease:hover{
+    border: 1px solid #F0F0F0;
+    transform: scale(1.2);
+  opacity: 0.8;
+  cursor: pointer;
+}
+.disease a{
+    text-align: center;
+    text-decoration: none;
+}
+.quick-do-doctor{
+
+    border-left: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+.big-img{
+    display: flex;
+}
+.quick-do-doctor-item{
+   padding: 40px;
+}
+.quick-do-doctor-item p{
+    margin: 0;
+    font-size: 15px;
+}
+.quick-do-doctor-item:hover {
+    cursor: pointer;
+    border-left: 4px solid #3093F3;
+}
+.quick-do-doctor-item a{
+    font-size: 20px;
+    font-weight: bold;
+ }
+.quick-do-doctor-item:hover a{
+    color: #3093F3 !important;
+}
+.sub-htext{
+    font-size: 15px;
+    color: #6B7280;
+}
+.img-quickdo{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+
+
+/* Home slide */
+/* ------Begin slider------ */
+#slider {
+    margin-top: 54px;
+    background-color: #d4e4ff80;
+    padding: 36px 0 0;
+}
+
+/* Heading-slider */
+.heading-slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-slider h1 {
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.heading-slider h1 span {
+    color: var(--PrimaryColor);
+}
+
+/* search */
+#slider .search{
+    display: flex;
+    justify-content: center;
+    margin: 36px 0;
+}
+
+.search div {
+    display: flex;
+    background-color: var(--White);
+    padding: 0;
+    border: 2px solid var(--PrimaryColor);
+    border-radius: 30px;
+}
+
+
+.search span {
+    display: block;
+    font-size: 20px;
+    padding: 10px 14px;
+    border-radius: 5px;
+}
+.search div input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    position: relative;
+}
+.search-btn{
+  width: 100px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0px solid var(--PrimaryColor);
+    background-color: #e8e8e8;
+}
+.search-btn:focus{
+  outline: none;
+}
+
+.img-slider a{
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--Black);
+    font-weight: 500;
+}
+
+.img-slider>a>div {
+    position: relative;
+}
+
+.img-slider>a>div>p {
+    background-color: var(--White);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 0 0 5px 5px;
+    margin: 0;
+}
+
+.img-slider div::after {
+    position: absolute;
+    top: 20%;
+    left: 0px;
+    content: "";
+    width: 100%;
+    height: 80%;
+    z-index: -1;
+}
+
+.img-slider:hover a {
+    text-decoration: none;
+}
+
+.img-slider:hover div::after {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+
+.list-img-slider {
+    display: flex;
+    justify-content: center;
+}
+
+.list-img-slider img{
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 991px){
+    /* -----Slider------ */
+    #slider .heading-slider {
+        display: none;
+    }
+}
+
+
+
+
+/* button Xemthem */
+.list_doctor-btn {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+button.list_doctor-btn-seemore {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  font-family: AvenirNext-DemiBold, sans-serif;
+  padding: 10px 20px;
+  color: #fff;
+  outline: 0;
+  border-radius: 100px;
+  /* cursor: pointer; */
+}
+button.list_doctor-btn-seemore:focus{
+  outline: none;
+}
+button.list_doctor-btn-seemore:hover{
+  background-color: #066ad4;
+    border: 1px solid #066ad4;
+    cursor: pointer;
+}
+
+
+/* --------------Main------------- */
+.content-section {
+  padding-top: 46px;
+  padding-bottom: 46px;
+}
+
+.heading-content {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.online-booking-heading {
+  text-align: center;
+}
+
+.online-booking-sub-heading{
+  text-align: center;
+}
+
+/* online booking */
+
+.online-booking-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.online-booking-img img.active {
+  display: block;
+}
+
+.online-booking-img img{
+  width: 80%;
+  display: none;
+}
+
+.online-booking-list-tab::after {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: var(--Gray);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.online-booking-tab {
+  padding: 40px ;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 5px solid transparent;
+  position: relative;
+}
+
+.online-booking-tab p {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: .5;
+}
+
+.online-booking-tab span {
+  font-size: 16px;
+  opacity: .5;
+}
+
+.online-booking-tab:hover p, .online-booking-tab:hover span {
+  opacity: 1;
+}
+
+.online-booking-tab.active p {
+  color: var(--PrimaryColor);
+}
+
+.online-booking-tab.active p, .online-booking-tab.active span {
+  opacity: 1;
+}
+
+.online-booking-tab::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: var(--Black);
+  left: -29px;
+  top: 44%;
+  border-radius: 50%;
+  border: 4px solid var(--White);
+  z-index: 100;
+}
+
+.active.online-booking-tab::before{
+  display: block;
+}
+
+
+.online-booking-tab:hover.online-booking-tab::before{
+  display: block;
+}
+
+.online-booking-tab::before {
+  position: absolute;
+  content: "";
+  display: none;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  left: -32px;
+  top: 42%;
+  border-radius: 50%;
+  border: 4px solid var(--White);
+  z-index: 100;
+  border: 13px solid var(--PrimaryColor);
+}
+
+.active.online-booking-tab{
+  opacity: 1;
+  background-color: var(--LightBlue);
+  border-color: rgba(194, 53, 100, 0.1);
+}
+
+.online-booking-tab:hover {
+  opacity: 1;
+  background-color: var(--LightBlue);
+  border-color: rgba(194, 53, 100, 0.1);
+}
+
+/* line */
+.online-booking-line {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 6px;
+  height: 0px;
+  border-radius: 15px;
+  background-color: var(--PrimaryColor);
+  transition: all 0.2s ease;
+}
+
+
+/* --------online-consultation------- */
+
+.wrap-btn {
+  padding: 10px 0;
+}
+.online-consultation-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.online-consultation-img img {
+  width: 90%;
+}
+
+
+/* ---------online-pharmacy---------- */
+.online-pharmacy-img {
+  display: flex;
+  justify-content: center;
+}
+.online-pharmacy-img img {
+  width: 90%;
+}
+
+.space-y-2 {
+  list-style: none !important;
+  padding: 0;
+}
+
+.space-y-2 li {
+  display: flex;
+  align-items: center;
+}
+
+/* ----------medical news--------- */
+.wrap-hon {
+  margin-bottom: 16px;
+}
+
+.wrap-hon img {
+  margin-right: 10px;
+}
+
+/*------------medical-news----------- */
+
+.medical-news-img img {
+  width: 90%;
+}
+
+.list-post-icon {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-post-icon>div {
+  padding: 10px;
+  background-color: var(--LightGray);
+  margin-right: 10px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.list-post-icon>div:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.list-post-icon>div p{
+  margin: 0;
+  display: inline-block;
+}
+
+.list-post-icon>div:nth-child(1) img{
+  height: 48px;
+}
+
+.list-post-icon>div:nth-child(2) img{
+  height: 48px;
+}
+
+.list-post-icon>div:nth-child(3) img{
+  height: 48px;
+}
+
+
+.list-post-icon>div:nth-child(4) img{
+  height: 48px;
+}
+
+
+/* -------data-security-------- */
+.wrap-data-security {
+  background-color: var(--LightGray);
+}
+
+.data-security-content {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrap-icon>div{
+  padding: 20px 20px 16px 20px;
+  border-radius: 50%;
+  display: block;
+}
+
+.wrap-icon p {
+  text-align: center;
+}
+
+.data-security-text {
+  margin-top: 36px;
+}
+
+@media screen and (max-width: 765px){
+  .online-booking-content {
+      display: flex;
+  }
+
+  .online-booking-content .online-consultation-img {
+      order: 1;
+  }
+
+  .online-booking-content .online-consultation-text {
+      order: 2;
+  }
+
+  .wrap-btn>a {
+      width: 100%;
+      display: block;
+      text-align: center;
+  }
+
+  .medical-news-content {
+      display: flex;
+  }
+
+  .medical-news-content .medical-news-img {
+      order: 1;
+  }
+
+  .medical-news-content .medical-news-text {
+      order: 2;
+  }
+}

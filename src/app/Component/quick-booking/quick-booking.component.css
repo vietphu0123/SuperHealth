@@ -1,0 +1,113 @@
+.book-appointment {
+    position: relative;
+}
+
+.book-appointment>p {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.book-appointment-date {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.book-appointment-date li.active {
+    background-color: var(--LightBlue);
+}
+
+.book-appointment-date li {
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 5px solid transparent;
+    cursor: pointer;
+}
+
+.book-appointment-date li:hover {
+    background-color: var(--LightBlue);
+    border-color: rgba(194, 53, 100, 0.1);
+}
+
+.book-appointment-date li p {
+    width: 138px;
+    text-align: center;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.book-appointment-date li span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: #1cb366;
+}
+
+.control-btn {
+    position: relative;
+}
+
+.control-btn .pre-btn {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 6px 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid var(--Gray);
+    background-color: #fff;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.control-btn .next-btn {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 6px 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid var(--Gray);
+    background-color: #fff;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.control-btn .down-btn {
+    position: absolute;
+    top: -43px;
+    right: 0;
+    padding: 4px 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #fff;
+    z-index: 100;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.control-btn .down-btn.active {
+    transform: rotate(180deg);
+    background-color: var(--PrimaryColor);
+    color: #fff;
+}
+
+/* horizontal-bar */
+.book-appointment-date .horizontal-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    border-radius: 15px;
+    background-color: var(--PrimaryColor);
+    transition: all 0.2s ease;
+}

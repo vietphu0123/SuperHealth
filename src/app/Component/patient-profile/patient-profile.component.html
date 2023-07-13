@@ -1,0 +1,738 @@
+<app-header></app-header>
+<div class="ProfilePatient">
+    <div class="container container_padding">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="ProfilePatient_left">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="" class="hide-before medical_examination_schedule">
+                                    Lịch Khám
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="hide-before history_pay">
+                                    Lịch sử thanh toán
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="hide-before file">
+                                    Hồ sơ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="hide-before account">
+                                    Tài khoản
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="hide-before sigout">
+                                    Đăng xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-6" >
+                <div class="ProfilePatient_medical_examination_schedule_right">
+                    <div class="ProfilePatient_right_title">
+                        <h5>
+                            Lịch khám
+                        </h5>
+                        <button class="ProfilePatient_right_title_button">
+                            <!-- <svg _ngcontent-serverApp-c62="" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1"><path _ngcontent-serverApp-c62="" fill-rule="evenodd" clip-rule="evenodd" d="M4.56517 3C3.70108 3 3 3.71286 3 4.5904V5.52644C3 6.17647 3.24719 6.80158 3.68936 7.27177L8.5351 12.4243L8.53723 12.4211C9.47271 13.3788 9.99905 14.6734 9.99905 16.0233V20.5952C9.99905 20.9007 10.3187 21.0957 10.584 20.9516L13.3436 19.4479C13.7602 19.2204 14.0201 18.7784 14.0201 18.2984V16.0114C14.0201 14.6691 14.539 13.3799 15.466 12.4243L20.3117 7.27177C20.7528 6.80158 21 6.17647 21 5.52644V4.5904C21 3.71286 20.3 3 19.4359 3p.56517Z" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg> -->
+                            Lọc
+                            <svg _ngcontent-serverApp-c76="" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1"><path _ngcontent-serverApp-c76="" fill-rule="evenodd" clip-rule="evenodd" d="M4.56517 3C3.70108 3 3 3.71286 3 4.5904V5.52644C3 6.17647 3.24719 6.80158 3.68936 7.27177L8.5351 12.4243L8.53723 12.4211C9.47271 13.3788 9.99905 14.6734 9.99905 16.0233V20.5952C9.99905 20.9007 10.3187 21.0957 10.584 20.9516L13.3436 19.4479C13.7602 19.2204 14.0201 18.7784 14.0201 18.2984V16.0114C14.0201 14.6691 14.539 13.3799 15.466 12.4243L20.3117 7.27177C20.7528 6.80158 21 6.17647 21 5.52644V4.5904C21 3.71286 20.3 3 19.4359 3H4.56517Z" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <form>
+                                <div class="ProfilePatient_right_filter">
+                                    <div class="ProfilePatient_right_filte_container">
+                                        <div>
+                                            <p>Ngày khám</p>
+                                            <input type="text" placeholder="Ngày bắt đầu">
+                                            <input type="text" placeholder="Ngày kết thúc">
+                                        </div>
+                                        <div>
+                                            <p>Trạng thái</p>
+                                        
+                                            <select class="form-select" id="example-select" aria-label="Example select">
+                                              <option value="1">Tất cả</option>
+                                              <option value="2">Đã thanh toán</option>
+                                              <option value="3">Chưa thanh toán</option>
+                                              <option value="1">Đã Hủy</option>
+                                              <option value="2">Đã đặt khám</option>
+                                              <option value="3">Đã khám</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <p>Dịch vụ</p>
+                                            <form class="scrollable-list">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                      Tiêu hóa
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                      Nhi khoa
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                                    <label class="form-check-label" for="exampleRadios3">
+                                                      Sản phụ khoa
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+                                                    <label class="form-check-label" for="exampleRadios4">
+                                                      Cơ xương khớp
+                                                    </label>
+                                                  </div>
+                                                </form>
+                                        </div>
+                                        <div>
+                                            <p>Nơi khám</p>
+                                            <form class="scrollable-list">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                      Tiêu hóa
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                      Nhi khoa
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                                    <label class="form-check-label" for="exampleRadios3">
+                                                      Sản phụ khoa
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+                                                    <label class="form-check-label" for="exampleRadios4">
+                                                      Cơ xương khớp
+                                                    </label>
+                                                  </div>
+                                                </form>
+                                        </div>
+                                        <div>
+                                                <a>Áp dụng</a>
+                                                <a>Bỏ lọc</a>
+                                            
+                                        </div>
+                                         
+                                    </div>
+                                </div>
+                            </form>
+                        </button>
+                    </div>
+                    <div class="ProfilePatient_right_content">
+                        <div class="ProfilePatient_right_content_left">
+                            <form >
+                                <input type="text" placeholder="Mã giao dịch, tên dịch vụ, tên bệnh nhân">
+                            </form>
+                             
+                            <div class="ProfilePatient_right_content_card_scroll">
+                                <div class="ProfilePatient_right_content_card_scroll_container">
+                                    <div class="ProfilePatient_right_content_card">
+                                        <div class="ProfilePatient_right_content_card_left">
+                                            <p>
+                                                TS.BS.CK2 Nguyễn Ngô Thị Tố Như
+                                            </p>
+                                            <p >
+                                                08:00 - 13/05/2023
+                                            </p>
+                                            <p >
+                                                Hồ Việt Phú
+                                            </p>
+                                            <div class="ProfilePatient_right_content_card_success-status">
+                                                <p>
+                                                    Đã đặt lịch
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ProfilePatient_right_content_card_right">
+                                            <span>STT</span>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                    <div class="ProfilePatient_right_content_card">
+                                        <div class="ProfilePatient_right_content_card_left">
+                                            <p >
+                                                TS.BS.CK2 Nguyễn Ngô Thị Tố Như
+                                            </p>
+                                            <p >
+                                                08:00 - 13/05/2023
+                                            </p>
+                                            <p >
+                                                Hồ Việt Phú
+                                            </p>
+                                            <div class="ProfilePatient_right_content_card_failure-status">
+                                                <p>
+                                                    Đã hủy
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ProfilePatient_right_content_card_right">
+                                            <span>STT</span>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                    <div class="ProfilePatient_right_content_card">
+                                        <div class="ProfilePatient_right_content_card_left">
+                                            <p >
+                                                TS.BS.CK2 Nguyễn Ngô Thị Tố Như
+                                            </p>
+                                            <p >
+                                                08:00 - 13/05/2023
+                                            </p>
+                                            <p >
+                                                Hồ Việt Phú
+                                            </p>
+                                            <div class="ProfilePatient_right_content_card_success-status">
+                                                <p>
+                                                    Đã đặt lịch
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ProfilePatient_right_content_card_right">
+                                            <span>STT</span>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                    <div class="ProfilePatient_right_content_card">
+                                        <div class="ProfilePatient_right_content_card_left">
+                                            <p >
+                                                TS.BS.CK2 Nguyễn Ngô Thị Tố Như
+                                            </p>
+                                            <p >
+                                                08:00 - 13/05/2023
+                                            </p>
+                                            <p >
+                                                Hồ Việt Phú
+                                            </p>
+                                            <div class="ProfilePatient_right_content_card_success-status">
+                                                <p>
+                                                    Đã đặt lịch
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ProfilePatient_right_content_card_right">
+                                            <span>STT</span>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="ProfilePatient_right_content_right ">
+                             <div class="ProfilePatient_right_content_right_title_success">
+                                <p>STT: 4</p>
+                                <div>
+                                    <svg _ngcontent-serverApp-c61="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path _ngcontent-serverApp-c61="" d="M10.75 2.45007C11.45 1.86007 12.58 1.86007 13.26 2.45007L14.84 3.80007C15.14 4.05007 15.71 4.26007 16.11 4.26007H17.81C18.87 4.26007 19.74 5.13007 19.74 6.19007V7.89007C19.74 8.29007 19.95 8.85007 20.2 9.15007L21.55 10.7301C22.14 11.4301 22.14 12.5601 21.55 13.2401L20.2 14.8201C19.95 15.1201 19.74 15.6801 19.74 16.0801V17.7801C19.74 18.8401 18.87 19.7101 17.81 19.7101H16.11C15.71 19.7101 15.15 19.9201 14.85 20.1701L13.27 21.5201C12.57 22.1101 11.44 22.1101 10.76 21.5201L9.18001 20.1701C8.88001 19.9201 8.31 19.7101 7.92 19.7101H6.17C5.11 19.7101 4.24 18.8401 4.24 17.7801V16.0701C4.24 15.6801 4.04 15.1101 3.79 14.8201L2.44 13.2301C1.86 12.5401 1.86 11.4201 2.44 10.7301L3.79 9.14007C4.04 8.84007 4.24 8.28007 4.24 7.89007V6.20007C4.24 5.14007 5.11 4.27007 6.17 4.27007H7.9C8.3 4.27007 8.86 4.06007 9.16 3.81007L10.75 2.45007Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path _ngcontent-serverApp-c61="" d="M12 8.12988V12.9599" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path _ngcontent-serverApp-c61="" d="M11.9945 16H12.0035" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    Đã đặt lịch
+                                </div>
+                             </div>
+                             <div class="ProfilePatient_right_content_right_img">
+                                <div class="ProfilePatient_right_content_right_img_infor">
+                                    <img src="../images//ListDocter//bs1.webp">  
+                                    <div class="div">
+                                         
+                                        <p>
+                                            TS.BS Đoàn Tiến Mỹ
+                                        </p>
+                                        <p>
+                                            434 Tỉnh Lộ 10, KP.10, P. Bình Trị Đông, Q. Bình Tân, TP.HCM
+                                        </p>
+                                    </div>
+                                    <img src="../images//QR.png"> 
+                                </div>
+                             </div>
+                             <div class="ProfilePatient_right_content_right_bookinfor">
+                                <p>
+                                    Thông tin đặt khám
+                                </p>
+                                <div>
+                                    <span>Mã phiếu khám</span>
+                                    <span>YMA2305130748</span>
+                                </div>
+                                <div>
+                                    <span>Ngày khám</span>
+                                    <span>13/05/2023</span>
+                                </div>
+                             </div>
+                             <div class="ProfilePatient_right_content_right_patientinfor">
+                                <p>
+                                    Thông tin bệnh nhân
+                                </p>
+                                <div>
+                                    <span>Họ và tên</span>
+                                    <span>Hồ Việt Phú</span>
+                                </div>
+                                <div>
+                                    <span>Năm sinh</span>
+                                    <span>17/08/2000</span>
+                                </div>
+                                <div>
+                                    <span>Số điện thoại</span>
+                                    <span>0932536150</span>
+                                </div>
+                                <div>
+                                    <span>Giới tính</span>
+                                    <span>Nam</span>
+                                </div>
+                                <div>
+                                    <span>Địa chỉ</span>
+                                    <span>Chưa cập nhật</span>
+                                </div>
+                             </div>
+                            <div class="ProfilePatient_right_content_righ_result">
+                                <p>
+                                    Kết quả
+                                </p>
+                                <span>
+                                    Chưa có kết quả
+                                </span>
+                            </div>
+                            <div class="ProfilePatient_right_content_righ_hotline">
+                                <p>
+                                    Tổng đài hỗ trợ và chăm sóc khách hàng
+                                    <a href="">
+                                        1900-2805
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ProfilePatient_history_pay_right">
+                    <div class="ProfilePatient_medical_examination_schedule_right">
+                        <div class="ProfilePatient_right_title">
+                            <h5>
+                                Lịch sử thanh toán
+                            </h5>
+                            
+                        </div>
+                        <div class="ProfilePatient_right_title_content">
+                            <div>
+                                <input type="text" placeholder="Mã giao dịch, tên dịch vụ, tên bệnh nhân">
+                                <button>
+                                    <svg _ngcontent-serverApp-c71="" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1"><path _ngcontent-serverApp-c71="" fill-rule="evenodd" clip-rule="evenodd" d="M4.56517 3C3.70108 3 3 3.71286 3 4.5904V5.52644C3 6.17647 3.24719 6.80158 3.68936 7.27177L8.5351 12.4243L8.53723 12.4211C9.47271 13.3788 9.99905 14.6734 9.99905 16.0233V20.5952C9.99905 20.9007 10.3187 21.0957 10.584 20.9516L13.3436 19.4479C13.7602 19.2204 14.0201 18.7784 14.0201 18.2984V16.0114C14.0201 14.6691 14.539 13.3799 15.466 12.4243L20.3117 7.27177C20.7528 6.80158 21 6.17647 21 5.52644V4.5904C21 3.71286 20.3 3 19.4359 3H4.56517Z" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    Lọc
+                                </button>
+
+                            </div>
+                            <div>
+                                <div>
+                                    <img src="../images/ProfilePatient/no_infor.PNG" alt="">
+                                    <p>chưa có thông tin thanh toán</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="ProfilePatient_file_right">
+                    <div class="ProfilePatient_medical_examination_schedule_right">
+                        <div class="ProfilePatient_right_title">
+                            <h5>
+                                Hồ Sơ
+                            </h5>
+                          
+                        </div>
+                        <div class="ProfilePatient_right_content">
+                            <div class="ProfilePatient_right_content_left">
+                                <form >
+                                    <input type="text" placeholder="Tìm nhanh hồ sơ">
+                                </form>
+                                 
+                                <div class="ProfilePatient_right_content_card_scroll">
+                                    <div class="ProfilePatient_right_content_card_scroll_container">
+                                        <div class="ProfilePatient_right_content_card">
+                                            <div class="ProfilePatient_right_content_card_tag">
+                                                <img src="../images/ProfilePatient/Family-Block.svg">
+                                                <div class="ProfilePatient_right_content_card_tag_circle"></div>
+                                                <div class="ProfilePatient_right_content_card_name">PH</div>
+                                                <span>Tôi</span>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Hồ Việt Phú
+                                                </p>
+                                                <p>
+                                                    17/08/2000
+                                                </p>
+                                            </div>
+                                             
+                                        </div>
+                                        <div>
+                                            <button class="ProfilePatient_right_content_right_container_add_profile_button">Thêm hồ sơ</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="ProfilePatient_right_content_right ">
+                                 <div class="ProfilePatient_right_content_right_img">
+                                    <div class="ProfilePatient_right_content_right_img_infor">
+                                        <div class="ProfilePatient_right_content_right_img_tag">
+                                            <div>
+
+                                            </div>
+                                            <div>
+                                                PH
+                                            </div>
+                                        </div>
+                                        <div class="div">
+                                             
+                                            <p>
+                                                HỒ VIỆT PHÚ
+                                            </p>
+                                            <p>
+                                                Mã BN: YMP23245205
+                                            </p>
+                                        </div>
+                                    </div>
+                                 </div>
+                                 <div class="ProfilePatient_right_content_right_img_caution">
+                                    <svg _ngcontent-serverApp-c81="" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path _ngcontent-serverApp-c81="" d="M3.24331 4.33318L3.24367 4.33298L7.19472 2.04762C7.19509 2.04741 7.19545 2.0472 7.19581 2.047C7.69601 1.76168 8.3058 1.76315 8.79663 2.04649C8.79664 2.0465 8.79665 2.04651 8.79667 2.04651L12.7533 4.33124C12.7539 4.33155 12.7544 4.33185 12.7549 4.33215C13.2494 4.62345 13.5542 5.1472 13.56 5.72248V10.2802C13.56 10.8559 13.2544 11.3836 12.7633 11.6671L12.7633 11.6672L8.80525 13.9527C8.80493 13.9529 8.8046 13.9531 8.80427 13.9533C8.30404 14.2387 7.69418 14.2372 7.20331 13.9538L3.24506 11.6682C2.75048 11.3768 2.44666 10.847 2.44666 10.2802V5.72016C2.44666 5.14444 2.75224 4.61669 3.24331 4.33318ZM8.82687 11.6604L8.83617 11.6511L8.84497 11.6413C8.94141 11.5342 9.01905 11.4131 9.07486 11.2791C9.1295 11.148 9.16666 10.996 9.16666 10.8335C9.16666 10.6737 9.13072 10.5241 9.07756 10.3944C9.01633 10.2379 8.93146 10.1218 8.84497 10.0257L8.83617 10.0159L8.82688 10.0066C8.50044 9.68017 7.99409 9.57313 7.55766 9.75719C7.40282 9.81832 7.28761 9.90262 7.19217 9.98851L7.1824 9.99731L7.1731 10.0066C6.94742 10.2323 6.83332 10.5352 6.83332 10.8335C6.83332 10.9699 6.85412 11.1248 6.91845 11.2791L6.92507 11.295L6.93278 11.3104C6.98794 11.4208 7.05838 11.5339 7.15501 11.6413L7.17261 11.6609L7.19217 11.6785C7.28827 11.765 7.40442 11.8498 7.56089 11.9111C7.69054 11.9642 7.84017 12.0002 7.99999 12.0002C8.30764 12.0002 8.60299 11.8843 8.82687 11.6604ZM7.99999 4.16683C7.45051 4.16683 6.99999 4.61735 6.99999 5.16683V8.66683C6.99999 9.21631 7.45051 9.66683 7.99999 9.66683C8.54946 9.66683 8.99999 9.21631 8.99999 8.66683V5.16683C8.99999 4.61735 8.54946 4.16683 7.99999 4.16683Z" fill="#F97316" stroke="#F97316"></path></svg>
+                                    <p>  Hoàn thiện thông tin để đặt khám và quản lý hồ sơ y tế được tốt hơn.</p>
+                                </div>
+                                 <div class="ProfilePatient_right_content_right_bookinfor">
+                                    <p>
+                                        Thông tin cơ bản
+                                    </p>
+                                    <div>
+                                        <span>Họ và tên</span>
+                                        <span>Hồ Việt Phú</span>
+                                    </div>
+                                    <div>
+                                        <span>Điện thoại</span>
+                                        <span>0932536150</span>
+                                    </div>
+                                    <div>
+                                        <span>Ngày sinh</span>
+                                        <span>17/08/2000</span>
+                                    </div>
+                                    <div>
+                                        <span>Giới tính</span>
+                                        <span>Nam</span>
+                                    </div>
+                                    <div>
+                                        <span>Địa chỉ</span>
+                                        <span>--</span>
+                                    </div>
+
+                                                    
+                                </div>
+                                 <div class="ProfilePatient_right_content_right_patientinfor">
+                                    <p>
+                                        Thông tin bổ sung
+                                    </p>
+                                    <div>
+                                        <span>Mã BHYT</span>
+                                        <span>--</span>
+                                    </div>
+                                    <div>
+                                        <span>Số CMND/CCCD</span>
+                                        <span>--</span>
+                                    </div>
+                                    <div>
+                                        <span>Dân tộc</span>
+                                        <span>Kinh</span>
+                                    </div>
+                                    <div>
+                                        <span>Email</span>
+                                        <span>--</span>
+                                    </div>
+                                    <div>
+                                        <span>Địa chỉ</span>
+                                        <span>Chưa cập nhật</span>
+                                    </div>
+                                 </div>
+                                <div class="ProfilePatient_right_content_right_change_infor">
+                                    <button type="button" class="btn btn-primary">Thay đổi thông tin</button>
+                                </div>
+                            </div>
+                            <div class="ProfilePatient_right_content_right ProfilePatient_right_content_right_new_profile">
+                                <div class="ProfilePatient_right_content_right_add_profile">
+                                    <div>
+                                      <p>Thêm hồ sơ mới</p>
+                                    </div>
+                                    
+                                </div>
+                                <form class="ProfilePatient_right_content_right_container_add_profile">
+                                    <div>
+                                        <label for="username">Họ và tên</label>
+                                        <input type="text" id="username" name="username" placeholder="Họ và tên">
+                                    </div>
+                                    <div>
+                                        <label for="SĐT">Số điện thoại</label>
+                                        <input type="text" id="SĐT" name="SĐT" placeholder="Số điện thoại">
+                                    </div>
+                                    <div>
+                                        <label for="Birthday">Ngày sinh</label>
+                                        <input type="text" id="Birthday" name="Birthday" placeholder="Ngày sinh">
+                                    </div>
+                                    <div>
+                                        <p>Giới tính</p>
+                                        <form class="scrollable-list">
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                                <label class="form-check-label" for="exampleRadios1">
+                                                  Nam 
+                                                </label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                <label class="form-check-label" for="exampleRadios2">
+                                                  Nữ
+                                                </label>
+                                            </div>
+                                        </form>
+                                
+                                    </div>
+                                    <div class="grid lg:grid-cols-3 gap-4">
+                                        <div>
+                                            <label for="country">Tỉnh / Thành phố</label>
+                                            <input type="text" id="country" name="country" placeholder="Tỉnh / Thành phố">
+                                        </div>
+                                        <div>
+                                            <label for="disctric">Quận / Huyện</label>
+                                            <input type="text" id="disctric" name="disctric" placeholder="Quận / Huyện">
+                                        </div>
+                                        <div>
+                                            <label for="ward">Phường / Xã</label>
+                                            <input type="text" id="ward" name="ward" placeholder="Phường / Xã">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for="address">Địa chỉ cụ thể</label>
+                                            <input type="text" id="address" name="address"placeholder="Số nhà tên đường">
+                                        </div>
+                                    </div>
+                                    <div class="grid lg:grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="cmnd">Số CMND/CCCD</label>
+                                            <input type="text" id="cmnd" name="cmnd" placeholder="Số CMND hoặc CCCD">
+                                        </div>
+                                        <div>
+                                            <label for="nation">Dân tộc</label>
+                                            <input type="text" id="nation" name="nation" placeholder="Kinh">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for="BHYT">Mã thẻ BHYT</label>
+                                            <input type="text" id="address" name="address" placeholder="Mã số trên thẻ BHYT">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for="Email">Email</label>
+                                            <input type="text" id="Email" name="Email" placeholder="Địa chỉ email của bạn">
+                                        </div>
+                                    </div>
+                                    <div class="ProfilePatient_right_content_right_container_update_profile_button">
+                                        <button type="button">Hủy</button>
+                                        <button type="button" class="btn btn-primary">Cập nhật</button>
+                                    </div>
+                                </form>
+                                </div>
+                           </div>
+                        </div>
+                </div>
+
+                <div class="ProfilePatient_account_right">
+                    <div class="ProfilePatient_medical_examination_schedule_right">
+                        <div class="ProfilePatient_right_title">
+                            <h5>
+                                Lịch sử thanh toán
+                            </h5>
+                                
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row justify-content-between">
+                                <div class="col-md-6 px-2 col-sm-6">
+                                    <div>
+                                        <div>
+                                            Thông tin tài khoản
+                                        </div>
+                                        <div>
+                                            <p>Họ và tên</p>
+                                            <p>Hồ Việt Phú</p>
+                                        </div>
+                                        <div>
+                                            <p>Số điện thoại</p>
+                                            <p>0932536150</p>
+                                        </div>
+                                        <div>
+                                            <p>Ngày sinh</p>
+                                            <p>17/08/2000</p>
+                                        </div>
+                                        <div>
+                                            <p>Địa chỉ</p>
+                                            <p>---</p>
+                                        </div>
+                                        <div>
+                                            <p>CMND/CCCD</p>
+                                            <p>---</p>
+                                        </div>
+                                        <div>
+                                            <p>Mã BHYT</p>
+                                            <p>---</p>
+                                        </div>
+                                        <div>
+                                            <a href="">Thay đổi thông tin</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6 px-2 col-sm-6">
+                                    <div>
+                                        <div>
+                                            <p>Thay đổi mật khẩu</p>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="password">Mật khẩu hiện tại 
+                                                    
+                                                    <span  class="text-red-500">*</span>
+                                                </label>
+                                                <input type="text" id="password" name="password" placeholder="Số nhà tên đường">
+                                            </div>
+                                            <div>
+                                                <label for="Repassword">Mật khẩu mới
+                                                    <span _ngcontent-serverapp-c76="" class="text-red-500">*</span>
+                                                </label>
+                                                <input type="text" id="Repassword" name="Repassword" placeholder="Số nhà tên đường">
+                                            </div>
+                                            <div>
+                                                <button type="button" >Thay đổi</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ProfilePatient_sigout_right">
+            </div>
+                    
+        
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    document.querySelector(".ProfilePatient_left nav li").querySelector("a").classList.toggle('hide-before');
+    document.querySelectorAll(".ProfilePatient_left nav li a").forEach(taga=>{
+        taga.addEventListener('click',event=>{
+            event.preventDefault();
+            var current = event.target.parentNode;
+            var siblings = [];
+            var prevElement = current.previousElementSibling;
+            while (prevElement) {
+                
+                siblings.push(prevElement);
+                prevElement = prevElement.previousElementSibling;
+            }
+            var nextElement = current.nextElementSibling;
+            while (nextElement) {
+            siblings.push(nextElement);
+            nextElement = nextElement.nextElementSibling;
+            }
+            
+            siblings.forEach((sub)=>{
+                let subElement = sub.querySelector("a");
+                subElement.style.backgroundColor = '#fff';
+                if(!(subElement.className.includes('hide-before')))
+                {
+                    subElement.classList.toggle('hide-before');
+                } 
+            })
+            event.target.style.backgroundColor = 'rgb(249,250,251)';
+            event.target.classList.remove('hide-before');
+            
+            console.log(event.target.className);
+            if(event.target.className.includes('medical_examination_schedule')){
+                document.querySelector(".ProfilePatient_medical_examination_schedule_right").style.display='block'
+                document.querySelector(".ProfilePatient_history_pay_right").style.display='none'
+                document.querySelector(".ProfilePatient_file_right").style.display='none';
+                document.querySelector(".ProfilePatient_account_right").style.display='none';
+            }
+            else if(event.target.className.includes('history_pay')){
+                document.querySelector(".ProfilePatient_medical_examination_schedule_right").style.display='none'
+                document.querySelector(".ProfilePatient_history_pay_right ").style.display='block'
+                document.querySelector(".ProfilePatient_history_pay_right .ProfilePatient_medical_examination_schedule_right").style.display='block'
+                document.querySelector(".ProfilePatient_file_right").style.display='none';
+                document.querySelector(".ProfilePatient_account_right").style.display='none';
+            }
+            else if(event.target.className.includes('file')){
+                document.querySelector(".ProfilePatient_medical_examination_schedule_right").style.display='none'
+                document.querySelector(".ProfilePatient_history_pay_right").style.display='none'
+                document.querySelector(".ProfilePatient_file_right").style.display='block';
+                document.querySelector(".ProfilePatient_account_right").style.display='none';
+            }
+            else if(event.target.className.includes('account')){
+                document.querySelector(".ProfilePatient_medical_examination_schedule_right").style.display='none'
+                document.querySelector(".ProfilePatient_history_pay_right").style.display='none'
+                document.querySelector(".ProfilePatient_file_right").style.display='none';
+                document.querySelector(".ProfilePatient_account_right").style.display='block';
+            }
+
+            
+    })
+    })
+
+    document.querySelector(".ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_title_button")
+    .addEventListener('click',(event)=>{
+        event.target.querySelector("form").style.display ='block'
+    })
+    document.querySelectorAll(".ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_title_button a")
+    .forEach((button)=>{
+        button.addEventListener('click',(event)=>{
+            document.querySelector(".ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_title_button form").
+            style.display='none';
+
+        })
+    })
+
+    document.querySelector(".ProfilePatient_right_content_right_change_infor button").addEventListener('click',(event)=>{
+        document.querySelector(".ProfilePatient_file_right .ProfilePatient_right_content_right ").style.display='none'
+        document.querySelector(".ProfilePatient_right_content_right_new_profile").style.display='block'
+    })
+
+    document.querySelectorAll(".ProfilePatient_right_content_right_container_update_profile_button button").forEach((bnt)=>{
+        bnt.addEventListener('click',event=>{
+            document.querySelector(".ProfilePatient_file_right .ProfilePatient_right_content_right ").style.display='block'
+            document.querySelector(".ProfilePatient_right_content_right_new_profile").style.display='none'
+        })
+    })
+    document.querySelector(".ProfilePatient_right_content_right_container_add_profile_button").addEventListener('click',event=>{
+        document.querySelector(".ProfilePatient_file_right .ProfilePatient_right_content_right ").style.display='none'
+        document.querySelector(".ProfilePatient_right_content_right_new_profile").style.display='block'
+    })
+
+</script>
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,107 @@
+<div class="spinner-wrap" *ngIf="loading==true">
+    <div class="spinner-border text-primary" role="status">
+        <span class="loader"></span>
+    </div>
+</div>
+<div mat-dialog-title>
+    <h1 style="text-align: center; font-size: 30px;">Tạo tài khoản bác sĩ</h1>
+</div>
+<form [formGroup]="adminDoctorForm" (ngSubmit)="AddDoctor()">
+    <div class="add-doctor-content" mat-dialog-content>
+        <div>
+            <mat-form-field appearance="outline" style="padding: 10px 0; width: 500px;">
+                <mat-label>Tên bác sĩ</mat-label>
+                <input placeholder="Tên bác sĩ" type="text" formControlName="DoctorName" matInput>
+                <mat-error
+                    *ngIf="adminDoctorForm.controls['DoctorName'].invalid && adminDoctorForm.controls['DoctorName'].dirty || adminDoctorForm.controls['DoctorName'].touched">
+                    <span class="text-danger" *ngIf="adminDoctorForm.controls['DoctorName'].errors?.['required']">*Phải
+                        nhập
+                        tên bác sĩ
+                    </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <mat-form-field appearance="outline" style="padding: 10px 0; width: 240px;">
+                <mat-label>Email</mat-label>
+                <input placeholder="Email" type="text" formControlName="Email" email="true" matInput>
+                <mat-error
+                    *ngIf="adminDoctorForm.controls['Email'].invalid && adminDoctorForm.controls['Email'].dirty || adminDoctorForm.controls['Email'].touched">
+                    <span class="text-danger" *ngIf="adminDoctorForm.controls['Email'].errors?.['required']">*Phải
+                        nhập
+                        Email
+                    </span>
+                    <span class="text-danger" *ngIf="adminDoctorForm.controls['Email'].errors?.['pattern']">*Không đúng
+                        định dạng email
+                    </span>
+                </mat-error>
+
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="padding: 10px 0; width: 240px;">
+                <mat-label>Số điện thoại</mat-label>
+                <input placeholder="Số điện thoại" type="text" formControlName="PhoneNumber" matInput>
+                <mat-error
+                    *ngIf="adminDoctorForm.controls['PhoneNumber'].invalid && adminDoctorForm.controls['PhoneNumber'].dirty || adminDoctorForm.controls['PhoneNumber'].touched">
+                    <span class="text-danger" *ngIf="adminDoctorForm.controls['PhoneNumber'].errors?.['required']">*Phải
+                        nhập
+                        số điện thoại
+                    </span>
+                    <span class="text-danger" *ngIf="adminDoctorForm.controls['PhoneNumber'].errors?.['pattern']">*Không
+                        đúng
+                        định dạng số điện thoại
+                    </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" style="padding: 10px 0; width: 500px;">
+                <mat-label>Chức vụ</mat-label>
+                <mat-select formControlName="PositionId">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let item of positionList" [value]="item.id">{{item.positionName}}</mat-option>
+                </mat-select>
+                <mat-error
+                    *ngIf="adminDoctorForm.controls['PositionId'].invalid && adminDoctorForm.controls['PositionId'].dirty || adminDoctorForm.controls['PositionId'].touched">
+                    <span class="text-danger" *ngIf="adminDoctorForm.controls['PositionId'].errors?.['required']">*Phải
+                        chọn chức vụ
+                    </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <!-- <div class="specialty-list">
+            <p (click)="dropDown()">Chuyên khoa <span><i class="fa-solid fa-caret-down"></i></span></p>
+            <ul>
+                <li class="specialty-element" *ngFor="let data of specialtyList">
+                    <input type="checkbox" [value]="data.id">
+                    <img [src]="data.image" width="50px" height="50px" alt="">
+                    <label>{{data.specialtyName}}</label>
+                </li>
+            </ul>
+        </div> -->
+        <div>
+            <mat-form-field appearance="outline" style="padding: 10px 0; width: 500px;">
+                <mat-label>Chuyên khoa</mat-label>
+                <mat-select formControlName="Specialties" multiple>
+                    <mat-option *ngFor="let data of specialtyList" [value]="data.id">{{data.specialtyName}}</mat-option>
+                </mat-select>
+                <mat-error
+                    *ngIf="adminDoctorForm.controls['Specialties'].invalid && adminDoctorForm.controls['Specialties'].dirty || adminDoctorForm.controls['Specialties'].touched">
+                    <span class="text-danger" *ngIf="adminDoctorForm.controls['Specialties'].errors?.['required']">*Phải
+                        nhập
+                        chuyên khoa
+                    </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <!-- <div class="specialty-element" *ngFor="let data of specialtyList">
+            <input type="checkbox" [value]="data.id">
+            <img [src]="data.image" width="50px" height="50px" alt="">
+            <label>{{data.specialtyName}}</label>
+        </div> -->
+        <!-- <div (click)="SubmitNhe()">test</div> -->
+    </div>
+    <div mat-dialog-actions style="display: flex; justify-content: center;">
+        <button type="submit" mat-raised-button color="primary" [disabled]="adminDoctorForm.invalid">Tạo</button>
+        <button type="button" mat-raised-button (click)="closeAddDoctor()">Hủy</button>
+    </div>
+</form>

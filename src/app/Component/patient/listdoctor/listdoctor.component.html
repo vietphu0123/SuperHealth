@@ -1,0 +1,104 @@
+<app-header></app-header>
+<div class="body_listdoctor">
+    <div class="container">
+        <nav class="body_listdoctor_nav">
+            <ul>
+                <li>Trang chủ</li>
+                <li class="body_listdoctor_nav_link">/</li>
+                <li>Bác sĩ</li>
+                <li class="body_listdoctor_nav_link">/</li>
+                <li>Tìm kiếm</li>
+            </ul>
+        </nav>
+
+
+    </div>
+    <div class="container-fluid body_listdoctor_padding">
+        <div class="body_listdoctor_search">
+            <div class="body_listdoctor_search_border">
+                <div >
+                    <input type="text" placeholder="Tìm theo triệu chứng, bác sĩ..." [(ngModel)]="search" [value]="search" (keypress)="onKeyPress($event, search)"  >
+                    <i class="fa-solid fa-magnifying-glass" (click)="onIconClick(search)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row body_listdoctor_row_margin">
+            <div class="col-md-3 col-sm-6">
+                <div class="body_listdoctor_body_left">
+                    <div class="body_listdoctor_body_left_header">
+                        <div>Chuyên khoa</div>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <div class="body_listdoctor_body_left_header_search_below">
+                        <div>
+                            <input  type="text" class="form-control body_listdoctor_body_left_header_search_below_input" placeholder="Tìm kiếm chuyên khoa" [(ngModel)]="searchRadiobutton"   (ngModelChange)="ChangeInput($event)">
+                            <form class="scrollable-list" >
+                                <div class="form-check" *ngFor="let specialty of listSpecialtyClone">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="{{specialty.id}}"
+                                    [value]="specialty.specialtyName" (click)="onSpecialtyChange(specialty.specialtyName)"
+                                    [checked]="specialty.specialtyName.toLowerCase() === selectedSpecialty.toLowerCase()" >
+                                    <!-- (change)="onSpecialtyChange(specialty.specialtyName)" -->
+                                    <label class="form-check-label" for="{{specialty.id}}">
+                                      {{specialty.specialtyName}}
+                                    </label>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body_listdoctor_body_left_img">
+                        <img src="../images/ListDocter/HelpDesk.webp" alt="">
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-6">
+                    <div class="body_listdoctor_body_right">
+                        <div class="body_listdoctor_body_right_boder" >
+                            <div class="body_listdoctor_body_right_boder_result">
+                                Tìm thấy
+                                <span>{{doctorLists.length}}</span>
+                                kết quả.
+                            </div>
+                            <div class="body_listdoctor_body_right_boder_result_card" *ngFor="let item of doctorLists" >
+                                <div class="body_listdoctor_body_right_boder_result_card_information" *ngIf="doctorLists.length>0">
+                                    <img src="{{item.imageDoctor ? item.imageDoctor : '../assets/images/avatarDoctor.png'}}">
+                                    <div class="body_listdoctor_body_right_boder_result_card_information_title">
+                                        <a href="http://127.0.0.1:5500/group3_mockproject/Client/Html/appointmentdoctor.html" class="body_listdoctor_body_right_boder_result_card_information_name">
+                                            Bác sĩ. {{item.doctorName}}
+                                        </a>
+                                        <div>
+                                            <div *ngIf="isString(item.specialties)">
+                                                <div ><p>{{item.specialties}}</p></div>
+                                            </div>
+                                            <div style="display: flex;" *ngIf="isString(item.specialties) == false">
+                                                <p *ngFor="let value of item.specialties">{{value}}</p>
+                                            </div>
+
+
+                                        </div>
+                                        <div>{{item.doctorAddress}}, {{item.ward}}, {{item.district}}, {{item.province}}</div>
+                                    </div>
+                                </div>
+                                <a type="button" class="btn btn-primary" style="color: #fff;" (click)="makeAppoitment(item.id)">Đặt khám nhanh</a>
+                            </div>
+
+                            <div class="noti-null" *ngIf="doctorLists.length <=0">
+                              <img src="../assets/images/bg-empty-search.png" alt="">
+                              <h5 >Không tìm thấy kết quả phù hợp</h5>
+                                <p>Rất tiếc, chúng tôi không tìm thấy kết quả nào phù hợp với từ khoá bạn tìm kiếm. Vui lòng thử lại với từ khoá khác.</p>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+

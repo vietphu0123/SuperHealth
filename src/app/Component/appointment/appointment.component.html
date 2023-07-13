@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <div class="nav-patient nav-appointment">
+            <a class="nav-1-patient" style="cursor: pointer;">
+                <span>1</span>
+                Thời gian khám
+            </a>
+        </div>
+        <div class="make-an-appointment-info">
+            <div class="appointment-doctor-content active col-lg-8">
+                <div class="appointment-common make-an-appointment-date book-appointment">
+                    <p class="heading"><span>1</span> Ngày và giờ khám</p>
+                    <div class="control-btn">
+                        <div class="pre-btn"><i class="fa-solid fa-angle-left"></i></div>
+                        <div class="next-btn"><i class="fa-solid fa-angle-right"></i></div>
+                        <div class="down-btn"><i class="fa-solid fa-angle-up"></i></div>
+                    </div>
+                    <app-quick-booking></app-quick-booking>
+                </div>
+            </div>
+            <div class="wrap-doctor-information col-lg-4">
+                <div class="doctor-information">
+                    <p>Thông tin đặt khám</p>
+                    <div>
+                        <div class="img-doctor-info">
+                            <img src="{{info.imageDoctor}}" alt="Avatar">
+                        </div>
+                        <div class="text-doctor-info">
+                            <p><b>{{info.doctorName}}</b></p>
+                            <p>91 Công Chúa Ngọc Hân, P.12, Q.11, TP.HCM</p>
+                        </div>
+                    </div>
+                    <div class="success-appointments-btn">
+                        <a>
+                            Xác nhận đặt khám
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

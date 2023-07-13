@@ -1,0 +1,231 @@
+
+<div class="ProfilePatient_right_content_right" *ngIf="changedata==false">
+    <div class="ProfilePatient_right_content_right_img">
+       <div class="ProfilePatient_right_content_right_img_infor">
+           <div class="ProfilePatient_right_content_right_img_tag">
+               <div>
+
+               </div>
+               <div>
+                {{ConvertPatientName(currentdata.patientName)}}
+               </div>
+           </div>
+           <div class="div">
+                
+               <p>
+                   {{currentdata.patientName}}
+               </p>
+               <p>
+                   Mã BN: YMP23245205
+               </p>
+           </div>
+       </div>
+    </div>
+    <div class="ProfilePatient_right_content_right_img_caution">
+       <svg _ngcontent-serverApp-c81="" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path _ngcontent-serverApp-c81="" d="M3.24331 4.33318L3.24367 4.33298L7.19472 2.04762C7.19509 2.04741 7.19545 2.0472 7.19581 2.047C7.69601 1.76168 8.3058 1.76315 8.79663 2.04649C8.79664 2.0465 8.79665 2.04651 8.79667 2.04651L12.7533 4.33124C12.7539 4.33155 12.7544 4.33185 12.7549 4.33215C13.2494 4.62345 13.5542 5.1472 13.56 5.72248V10.2802C13.56 10.8559 13.2544 11.3836 12.7633 11.6671L12.7633 11.6672L8.80525 13.9527C8.80493 13.9529 8.8046 13.9531 8.80427 13.9533C8.30404 14.2387 7.69418 14.2372 7.20331 13.9538L3.24506 11.6682C2.75048 11.3768 2.44666 10.847 2.44666 10.2802V5.72016C2.44666 5.14444 2.75224 4.61669 3.24331 4.33318ZM8.82687 11.6604L8.83617 11.6511L8.84497 11.6413C8.94141 11.5342 9.01905 11.4131 9.07486 11.2791C9.1295 11.148 9.16666 10.996 9.16666 10.8335C9.16666 10.6737 9.13072 10.5241 9.07756 10.3944C9.01633 10.2379 8.93146 10.1218 8.84497 10.0257L8.83617 10.0159L8.82688 10.0066C8.50044 9.68017 7.99409 9.57313 7.55766 9.75719C7.40282 9.81832 7.28761 9.90262 7.19217 9.98851L7.1824 9.99731L7.1731 10.0066C6.94742 10.2323 6.83332 10.5352 6.83332 10.8335C6.83332 10.9699 6.85412 11.1248 6.91845 11.2791L6.92507 11.295L6.93278 11.3104C6.98794 11.4208 7.05838 11.5339 7.15501 11.6413L7.17261 11.6609L7.19217 11.6785C7.28827 11.765 7.40442 11.8498 7.56089 11.9111C7.69054 11.9642 7.84017 12.0002 7.99999 12.0002C8.30764 12.0002 8.60299 11.8843 8.82687 11.6604ZM7.99999 4.16683C7.45051 4.16683 6.99999 4.61735 6.99999 5.16683V8.66683C6.99999 9.21631 7.45051 9.66683 7.99999 9.66683C8.54946 9.66683 8.99999 9.21631 8.99999 8.66683V5.16683C8.99999 4.61735 8.54946 4.16683 7.99999 4.16683Z" fill="#F97316" stroke="#F97316"></path></svg>
+       <p>  Hoàn thiện thông tin để đặt khám và quản lý hồ sơ y tế được tốt hơn.</p>
+   </div>
+    <div class="ProfilePatient_right_content_right_bookinfor">
+       <p>
+           Thông tin cơ bản
+       </p>
+       <div>
+           <span>Họ và tên</span>
+           <span>{{currentdata.patientName}}</span>
+       </div>
+       <div>
+           <span>Điện thoại</span>
+           <span>{{currentdata.phoneNumber}}</span>
+       </div>
+       <div>
+           <span>Ngày sinh</span>
+           <span>{{currentdata.dateOfBirth|date:'MMM d, y'}}</span>
+       </div>
+       <div>
+           <span>Giới tính</span>
+           <span *ngIf="currentdata.gender==0">Nam</span>
+           <span *ngIf="currentdata.gender==1">Nữ</span>
+       </div>
+       <div>
+           <span>Địa chỉ</span>
+           <span>{{currentdata.address}}</span>
+       </div>
+
+                       
+   </div>
+    <div class="ProfilePatient_right_content_right_patientinfor">
+       <p>
+           Thông tin bổ sung
+       </p>
+       <div>
+           <span>Mã BHYT</span>
+           <span>{{currentdata.bhyt}}</span>
+       </div>
+       <div>
+           <span>Số CMND/CCCD</span>
+           <span>{{currentdata.cmnd}}</span>
+       </div>
+       <div>
+           <span>Dân tộc</span>
+           <span>{{currentdata.ethnicity}}</span>
+       </div>
+       <div>
+           <span>Email</span>
+           <span>--</span>
+       </div>
+       <div>
+           <span>Địa chỉ</span>
+           <span>Chưa Cập Nhật</span>
+       </div>
+    </div>
+   <div class="ProfilePatient_right_content_right_change_infor">
+       <button type="button" class="btn btn-primary" (click)="changeDataSubmit()">Thay đổi thông tin</button>
+   </div>
+</div>
+<div class="ProfilePatient_right_content_right ProfilePatient_right_content_right_new_profile" *ngIf="changedata==true">
+   <div class="ProfilePatient_right_content_right_add_profile">
+       <div>
+         <p>Thay đổi thông tin</p>
+       </div>
+       
+   </div>
+   <form class="ProfilePatient_right_content_right_container_add_profile" [formGroup]="validateResultInfor">
+    <div>
+      <label for="patientName">Họ và tên <span class="text-danger">*</span></label>
+      <input type="text" id="patientName" formControlName="patientName" placeholder="Họ và tên"  required>
+      <small *ngIf="validateResultInfor.controls['patientName'].touched  &&  validateResultInfor.hasError('required','patientName')" class="text-danger">*Username is required</small>
+  </div>
+  <div>
+      <label for="phoneNumber">Số điện thoại <span class="text-danger">*</span></label>
+      <input type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="Số điện thoại" pattern="^(?=.*[1-9])\d+$">
+      <small *ngIf="validateResultInfor.controls['phoneNumber'].touched  &&  validateResultInfor.hasError('required','phoneNumber')" class="text-danger">*phoneNumber is required</small>
+      <small *ngIf="validateResultInfor.controls['phoneNumber'].touched  &&  validateResultInfor.hasError('pattern','phoneNumber')" class="text-danger">*phoneNumber is invalid</small>
+  </div>
+  <div>
+      <label for="dateOfBirth">Ngày sinh <span class="text-danger">*</span></label>
+      <input type="date" id="dateOfBirth" formControlName="dateOfBirth" placeholder="Ngày sinh" >
+      <small *ngIf="validateResultInfor.controls['dateOfBirth'].touched  &&  validateResultInfor.hasError('required','dateOfBirth')" class="text-danger">*dateOfBirth is required</small>
+  </div>
+  <div>
+      <p>Giới tính <span class="text-danger">*</span></p>
+      <div class="scrollable-list">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="gender" id="exampleRadios1" value="0" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Nam
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="gender" id="exampleRadios2" value="1" >
+          <label class="form-check-label" for="exampleRadios2">
+            Nữ
+          </label>
+        </div>
+      </div>
+      
+  </div>
+  <div class="grid lg:grid-cols-3 gap-4">
+      <div>
+        <select id="province" (change)="onProvinceChange()" class="select_css" formControlName="province" [(ngModel)]="valueCurrentData.addressCommon.province" >
+          <option *ngFor="let province of provinces" [value]="province.code" [selected]="province.code === valueCurrentData.addressCommon.province">{{ province.name }}</option>
+          
+          <!-- <option *ngFor="let province of provinces" [value]="province.code">{{ province.name }}</option> -->
+        </select>
+      </div>
+      <div>
+        <select id="district" (change)="onDistrictChange()" class="select_css" formControlName="district" [(ngModel)]="valueCurrentData.addressCommon.district">
+          <option *ngFor="let district of districts" [value]="district.code" [selected]="district.code === valueCurrentData.addressCommon.district">{{ district.name }}</option>
+          
+        </select>
+
+      </div>
+      
+      <div>
+        <select id="ward" (change)="onWardChange()" class="select_css" formControlName="ward" [(ngModel)]="valueCurrentData.addressCommon.ward">
+          <option *ngFor="let ward of wards" [value]="ward.code" [selected]="ward.code === valueCurrentData.addressCommon.ward">{{ ward.name }}</option>
+        </select>
+
+      </div>
+      
+
+  </div>
+  <!-- <small *ngIf="validateResultInfor.controls['ward'].dirty  &&  validateResultInfor.hasError('required','ward')" class="text-danger">*address is required</small> -->
+  <div>
+      <div>
+          <label for="address">Địa chỉ cụ thể <span class="text-danger">*</span></label>
+          <input type="text" id="address" formControlName="address" placeholder="Số nhà tên đường" >
+          <small *ngIf="validateResultInfor.controls['address'].touched  &&  validateResultInfor.hasError('required','address')" class="text-danger">*address is required</small>
+      </div>
+  </div>
+  <div class="grid lg:grid-cols-2 gap-4">
+      <div>
+          <label for="cmnd">Số CMND/CCCD <span class="text-danger">*</span></label>
+          <input type="text" id="cmnd" formControlName="cmnd" placeholder="Số CMND hoặc CCCD" pattern="^(?=.*[1-10])\d+$">
+          <small *ngIf="validateResultInfor.controls['cmnd'].touched  &&  validateResultInfor.hasError('required','cmnd')" class="text-danger">*cmnd is required</small>
+          <small *ngIf="validateResultInfor.controls['cmnd'].touched  &&  validateResultInfor.hasError('pattern','cmnd')" class="text-danger">*cmnd is invalid</small>
+     </div>
+      <div>
+          <label for="ethnicity">Dân tộc</label>
+          <input type="text" id="ethnicity" formControlName="ethnicity" placeholder="Dân Tộc" >
+          <!-- <small *ngIf="validateResultInfor.controls['ethnicity'].dirty  &&  validateResultInfor.hasError('required','ethnicity')" class="text-danger">*ethnicity is required</small> -->
+      </div>
+  </div>
+  <div>
+      <div>
+          <label for="bhyt">Mã thẻ BHYT</label>
+          <input type="text" id="bhyt" formControlName="bhyt" placeholder="Mã số trên thẻ BHYT" >                 
+      </div>
+  </div>
+  <div>
+      <div>
+          <label for="email">Email <span class="text-danger">*</span></label>
+          <input type="email" id="email" formControlName="email" placeholder="Địa chỉ email của bạn" email="true">
+          <div *ngIf="validateResultInfor.hasError('required','email') && validateResultInfor.controls['email'].touched">
+            <small class="text-danger">*email is required</small>
+          </div>
+          <div *ngIf="validateResultInfor.hasError('email','email') && validateResultInfor.controls['email'].touched">
+            <small class="text-danger">*email is valid</small>
+          </div>             
+          
+          
+          
+      </div>
+  </div>
+       <div class="ProfilePatient_right_content_right_container_update_profile_button">
+          
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Hủy
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Comfirm</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="text-align: left;">
+                    Bạn Có Muốn Hủy Cập Nhật 
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Hủy</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="changeDataSubmit()">Đồng Ý</button>
+                   
+                </div>
+              </div>
+            </div>
+          </div>         
+          <button type="button" class="btn btn-primary" (click)="submitValue()">
+            Cập Nhật
+          </button>
+          
+        
+         
+       </div>
+   </form>
+</div>
+
+ 

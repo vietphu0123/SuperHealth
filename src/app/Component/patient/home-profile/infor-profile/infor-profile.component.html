@@ -1,0 +1,51 @@
+<div class="ProfilePatient_file_right">
+    <div class="ProfilePatient_medical_examination_schedule_right">
+        <div class="ProfilePatient_right_title">
+            <h5>
+                Hồ Sơ
+            </h5>
+
+        </div>
+        <div class="ProfilePatient_right_content">
+            <div class="ProfilePatient_right_content_left">
+                <form>
+                    <input type="text" placeholder="Tìm nhanh hồ sơ">
+                </form>
+
+                <div class="ProfilePatient_right_content_card_scroll">
+                    <div class="ProfilePatient_right_content_card_scroll_container">
+                        <div *ngFor="let item of listdata"> 
+                        <div class="ProfilePatient_right_content_card" (click)="submitdata(item)">
+                            <div class="ProfilePatient_right_content_card_tag">
+                                <img src="../../../../../../assets/images/ProfilePatient/Family-Block.svg">
+                                <div class="ProfilePatient_right_content_card_tag_circle"></div>
+                                <div class="ProfilePatient_right_content_card_name">{{ConvertPatientName(item.patientName)}}</div>
+                                <span>{{item.relationShip}}</span>
+                            </div>
+                            <div>
+                                <p>
+                                    {{item.patientName}}
+                                </p>
+                                <p>
+                                    {{item.dateOfBirth|date:'MMM d, y'}}
+                                </p>
+                            </div>
+                             
+                        </div>
+                        </div>
+                        <div>
+                            <button class="ProfilePatient_right_content_right_container_add_profile_button"
+                                (click)="submitNewData()">Thêm hồ sơ</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <app-infornew *ngIf="addnewData==true"  [currentdata]="data"  style="width: 100%;"></app-infornew>
+            <app-inforresult *ngIf="addnewData==false" [currentdata]="data" style="width: 100%;"></app-inforresult>
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal -->

@@ -1,0 +1,175 @@
+<h1 class="h3 mb-2 text-gray-800">Bệnh nhân</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h4 class="m-0 font-weight-bold text-primary">Danh sách bệnh nhân</h4>
+  </div>
+  <div class="card-body">
+
+    <div class="table-responsive">
+      <div class="specialty-actions">
+        <div class="col-lg-5 col-xl-4">
+          Hiện thị
+          <select (change)="handlePageSizeChange($event)">
+            <option *ngFor="let size of pageSizes" [ngValue]="size">
+              {{ size }}
+            </option>
+          </select>
+          bản ghi
+        </div>
+        <div class="col-lg-5 col-xl-4">
+          <input type="text" class="form-control" placeholder="Tìm kiếm theo tên" [(ngModel)]="search"
+            (input)="handleSearchChange($event)" />
+        </div>
+      </div>
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Tên bệnh nhân</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Tên tài khoản</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Tên bệnh nhân</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Tên tài khoản</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+            <th>Thao tác</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr *ngFor="let patient of adminPatientList | paginate: {
+                        itemsPerPage: pageSize, currentPage: page, totalItems: total
+                    }">
+            <td>{{patient.patientName}}</td>
+            <td>{{patient.dateOfBirth | date:'dd/MM/yyyy'}}</td>
+            <td>{{(patient.gender == '1') ? 'Nam' : (patientDetails.gender == '2') ? 'Nữ' : 'Khác'}}</td>
+            <td>{{patient.userName}}</td>
+            <td>{{patient.phoneNumber }}</td>
+            <td>{{patient.email }}</td>
+            <td >
+
+
+                <a href="#viewPatientById" class="primary btn-view" data-toggle="modal"  (click)="openViewPatient(patient.id)" >
+
+                  <i class="far fa-eye" style="padding-right: 5px;"></i>
+                </a>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="specialty-pagination">
+      <pagination-controls previousLabel="Trang trước" nextLabel="Trang sau" (pageChange)="pageChange($event)"
+        class="my-pagination"></pagination-controls>
+    </div>
+
+
+  </div>
+</div>
+
+
+<!-- View Modal HTML View details patient -->
+<div id="viewPatientById" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Chi tiết bệnh nhân</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+
+      <div class="container booking-success modal-body">
+        <!-- info doctor -->
+        <div class="doctor-infor-head">
+          <div><img class="doctor-img" src="" alt="">{{patientDetails.image}}</div>
+          <div class="doctor-infor" >
+            <h4>{{patientDetails.patientName}}</h4>
+            <p>Liên hệ: {{patientDetails.phoneNumber}}</p>
+          </div>
+        </div>
+
+        <div class="doctor-booking-content">
+          <div class="doctor-booking-left">
+
+
+            <!-- info account -->
+            <div class="w-full p-4 ng-star-inserted">
+              <p class="font-medium">Thông tin tài khoản</p>
+              <div class="item-wrapper">
+                <p>Tên tài khoản: {{patientDetails.userName}}</p>
+              </div>
+              <div class="flex flex-col">
+                <div class="item-wrapper ng-star-inserted">
+                  <p>Email: {{patientDetails.email}}</p>
+                </div><!---->
+                <p class="font-normal text-sm text-gray-500 leading-17 text-right m-0"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- info patient -->
+          <div class="doctor-booking-right">
+            <div class="md:basis-1/2 ng-star-inserted">
+              <div class="w-full p-4 ng-star-inserted">
+                <p class="font-medium "> Thông tin bệnh nhân </p>
+                <div class="item-wrapper">
+                  <p>Địa chỉ: {{patientDetails.address}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p>Giới tính: {{(patientDetails.gender == '1') ? 'Nam' : (patientDetails.gender == '2') ? 'Nữ' : 'Khác'}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p>Ngày sinh: {{patientDetails.dateOfBirth | date:'dd/MM/yyyy'}}</p>
+
+                </div>
+                <div class="item-wrapper">
+                  <p>Dân tộc: {{patientDetails.ethnicity}}</p>
+
+                </div>
+                <div class="item-wrapper">
+                  <p>CMND: {{patientDetails.cmnd}}</p>
+
+                </div>
+                <div class="item-wrapper">
+                  <p>BHYT: {{patientDetails.bhyt}}</p>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- <div class="container booking-success modal-body">
+
+        <div class="doctor-infor-head">
+          <div><img class="doctor-img" src="" alt="">{{patientDetails.image}}</div>
+          <div class="doctor-infor" >
+            <h4>{{patientDetails.patientName}}</h4>
+            <p>Địa chỉ: {{patientDetails.address}}</p>
+            <p>Liên hệ: {{patientDetails.phoneNumber}}</p>
+            <p>Giới tính: {{(patientDetails.gender == '1') ? 'Nam' : (patientDetails.gender == '2') ? 'Nữ' : 'Khác'}}</p>
+            <p>Ngày sinh: {{patientDetails.dateOfBirth | date:'dd/MM/yyyy'}}</p>
+            <p>Tên tài khoản: {{patientDetails.userName}}</p>
+            <p>Email: {{patientDetails.email}}</p>
+            <p>Dân tộc: {{patientDetails.ethnicity}}</p>
+            <p>CMND: {{patientDetails.cmnd}}</p>
+            <p>BHYT: {{patientDetails.bhyt}}</p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+

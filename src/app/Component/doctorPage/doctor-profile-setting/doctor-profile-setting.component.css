@@ -1,0 +1,172 @@
+.headPage-container {
+    background: #f2f6f6;
+    background-repeat: no-repeat;
+    padding-top: 70px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .headPage-title {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
+  .page-headPage {
+    display: block;
+  }
+  .headPage {
+    background-color: transparent;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    display: inline-flex;
+    list-style: none;
+  }
+  .headPage-item {
+    font-weight: 500;
+    color: #1f2937;
+    padding-left: 10px;
+  }
+  
+  /* CONTENT */
+  .left-content {
+    transform: none;
+    min-height: 451.906px;
+    padding: 80px 0 60px;
+  }
+  .left-sidebar {
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+    min-height: 1px;
+  }
+  .left-sidebar-inside {
+    padding-top: 0px;
+    padding-bottom: 1px;
+    position: static;
+    transform: none;
+    top: 0px;
+    left: 182px;
+  }
+  .profile-sidebar {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .pro-widget-content {
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  .profile-info-widget {
+    display: block !important;
+    text-align: center !important;
+  }
+  
+  .profile-info-widget .booking-doc-img {
+    display: inline-block;
+    width: auto;
+    background-color: #f7f7f7;
+    margin: 0 0 15px !important;
+    padding: 8px;
+    border-radius: 50%;
+  }
+  .booking-doc-img img {
+    height: 120px !important;
+    width: 120px !important;
+    border-radius: 50% !important;
+  }
+  
+  .profile-des-info {
+    overflow: hidden;
+  }
+  .profile-des-info h3 {
+    font-size: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .profile-des-info .patient-details h5 {
+    color: #757575;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  a {
+    text-decoration: none;
+  }
+  .dashboard-menu ul {
+    color: #757575;
+    font-size: 14px;
+    line-height: 17px;
+    list-style: none;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+  }
+  .dashboard-menu > ul > li {
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+  }
+  .profile-sidebar .dashboard-menu > ul > li a {
+    color: #757575;
+    display: block;
+    padding: 16px 20px;
+  }
+  .dashboard-menu ul li {
+    line-height: inherit;
+  }
+/* RIGHTCONTENT */
+.card {
+    border: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+}
+.card-body {
+    padding: 20px;
+}
+.card-title {
+  font-size: 25px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label{
+  font-weight: bold;
+}
+.change-avatar {
+    display: flex;
+}
+.change-avatar .profile-img {
+    margin-right: 15px;
+}
+.change-avatar .profile-img img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.change-avatar .change-photo-btn {
+    margin: 0 0 10px;
+    width: 150px;
+}
+
+
+.form-select.form-control.inputSelect {
+  display: block;
+  margin: 8px 0;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 1em;
+  line-height: 1.5em;
+}

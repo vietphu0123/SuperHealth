@@ -1,0 +1,696 @@
+.ProfilePatient{
+    margin-top: 60px;
+    background-color: rgb(243,244,246);
+}
+.ProfilePatient .container_padding{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.ProfilePatient_left{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.ProfilePatient_left ul{
+    list-style: none;
+    margin: 0px;
+    padding: 16px 0px;
+}
+
+.ProfilePatient_left a{
+    text-decoration: none;
+    color: black;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    padding: 16px;
+    display: block;
+    position: relative;
+}
+.ProfilePatient_left a:hover{
+    background-color: rgb(243,244,246);
+}
+
+.ProfilePatient_left a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    right: auto;
+    top: 0;
+    height: auto;
+    width: 4px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top-left-radius: 4px;
+    background-color: rgb(25,117,220);
+}
+
+.ProfilePatient_left a.hide-before::before {
+    display: none;
+}
+
+
+/* Left */
+
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_title {
+    padding: 16px 0px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_title h5{
+    font-weight: 700;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_title button{
+    background-color: #fff;
+    border-radius: 4px;
+    border: none;
+    padding: 0px 12px;
+    height: 30px;
+    position: relative;
+}
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content{
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+
+}
+ 
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content {
+    margin: 0px;
+}
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_left{
+    padding: 0px;
+    border-right: 2px solid rgb(249,250,251);
+
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_left input{
+    padding: 8px;
+    width: 100%;
+    
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_left form{
+    padding: 16px;
+}
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_left{
+    width: 40%;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right{
+    width: 60%;
+}
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_card {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_card p{
+    margin: 0px;
+    font-size: 14px;
+}
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_card_left > p:nth-child(1){
+    font-weight: 500;
+    line-height: 21px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_card .ProfilePatient_right_content_card-status p{
+    font-weight: 400;
+}
+.ProfilePatient_right_content_card:hover{
+    background-color: rgb(249,250,251);
+}
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_card_right {
+    padding: 16px;
+    border: 1px solid rgb(241, 241, 241);
+ 
+}
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_card_right p{
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+.ProfilePatient_right_content_card{
+    cursor: pointer;
+}
+
+.ProfilePatient_right_content_card_scroll {
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  
+  .ProfilePatient_right_content_card_scroll_container {
+    width: 100%;
+    height: 100%;
+    /* nội dung */
+  }
+
+.ProfilePatient_right_content_card_success-status p{
+    font-size: 12px !important;
+    padding: 4px 8px;
+    background-color: rgb(240,253,244);
+    display: inline-block;
+    color: rgb(34,197,94);
+    border-radius: 8px;
+}
+.ProfilePatient_right_content_card_failure-status p{
+    font-size: 12px !important;
+    padding: 4px 8px;
+    background-color: rgb(249,250,251);
+    display: inline-block;
+    color: rgb(107,114,128);
+    border-radius: 8px;
+}
+
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_title_success{
+    color: rgb(34,197,94);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px 0px 24px;
+    margin-top: 16px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_img{
+    padding: 0px 24px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_img_infor{
+    display: flex;
+    align-items: center;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_img_infor img:nth-child(1){
+    height: 64px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_img_infor div p:nth-child(1){
+    font-weight: 500;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_img_infor div p:nth-child(2){
+    font-size: 14px;
+    color: rgb(107,134,169);
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_img_infor div p{
+    margin: 0;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_img_infor div {
+    padding: 0px 12px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_bookinfor div{
+    margin-top: 12px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_patientinfor div{
+    margin-top: 12px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_bookinfor p{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_bookinfor span{
+    font-size: 14px;
+
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_patientinfor p{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_patientinfor span{
+    font-size: 14px;
+
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_bookinfor{
+    padding: 24px 24px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_patientinfor{
+    padding: 24px 24px;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_bookinfor div{
+    display: flex;
+    justify-content: space-between;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_bookinfor div span:nth-child(2){
+    font-weight: 500;
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right_patientinfor div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ProfilePatient_right_content_righ_result{
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+.ProfilePatient_right_content_righ_result p{
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.ProfilePatient_right_content_righ_result span{
+    
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ProfilePatient_right_content_righ_hotline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    padding: 16px 24px;
+    background-color: rgb(249,250,251);
+    margin-bottom: 50px;
+}
+.ProfilePatient_right_content_righ_hotline p{
+    margin: 0px;
+}
+.ProfilePatient_right_content_righ_hotline a{
+    text-decoration: none;
+}
+
+.ProfilePatient_right_filter{
+    position: absolute;
+    z-index: 99;
+    background-color: #fff;
+    right: 0;
+    top: 50px;
+    width: 314px;
+    padding: 12px 16px;
+    text-align: left;
+    box-shadow: 2px 2px 10px #888888;
+}
+
+ 
+.ProfilePatient_right_filter input{
+    width: 100%;
+}
+.ProfilePatient_right_filter div{
+    margin-bottom: 12px;
+}
+.ProfilePatient_right_filter p{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+
+}
+.ProfilePatient_right_filte_container{
+    position: relative;;
+}
+.ProfilePatient_right_filte_container::after
+{
+    position: absolute;
+    display: block;
+    content: "";
+    right: -10px;
+    top: -40px;
+    border-width: 16px 20px;
+    border-style:solid ;
+    border-color:transparent transparent #fff transparent ;
+}
+.ProfilePatient_right_filte_container :nth-child(4)  input{
+    width: 14.400px;
+    height: 14.400px;
+}
+.ProfilePatient_right_filte_container :nth-child(3)  input{
+    width: 14.400px;
+    height: 14.400px;
+}
+.ProfilePatient_right_filte_container div:nth-child(1) input{
+    margin-bottom: 6px;
+    padding: 4px;
+}
+.ProfilePatient_right_filte_container div:nth-child(1) input::placeholder{
+    font-size: 13px;
+}
+.ProfilePatient_right_filte_container label{
+    width: 100%;
+    cursor:pointer;
+}
+.ProfilePatient_right_filte_container div:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+.ProfilePatient_right_filte_container div:last-child a{
+    padding: 8px 14px;
+    
+}
+.ProfilePatient_right_filte_container div:last-child a:nth-child(1){
+    background-color: rgb(25,117,220);
+    border-radius: 4px;
+    color: #fff;
+    
+}
+.ProfilePatient_right_filte_container div:last-child a:nth-child(2){
+    background-color: rgb(232,241,251);
+    border-radius: 4px;
+    color: rgb(82,151,229);
+    
+}
+.ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_title_button form{
+    display: none;
+}
+.ProfilePatient_history_pay_right{
+    display: none;
+}
+.ProfilePatient_file_right{
+    display: none;
+}
+.ProfilePatient_account_right{
+    display: none;
+}
+
+/*ProfilePatient_file_right  */
+.ProfilePatient_file_right .ProfilePatient_right_content_card{
+    display: flex;
+    justify-content:flex-start;
+}
+.ProfilePatient_file_right .ProfilePatient_right_content_card_tag{
+    position: relative;
+}
+.ProfilePatient_file_right .ProfilePatient_right_content_card_tag span:last-child{
+    position: absolute;
+    background-color: rgb(156,163,175);
+    border-radius: 12px;
+    font-size: 12px;
+    color: #fff;
+    padding: -0px 4px;
+    top: -6px;
+    right: 0px;
+}
+.ProfilePatient_file_right .ProfilePatient_right_content_card_tag .ProfilePatient_right_content_card_tag_circle{
+    width: 32px;
+    height: 32px;
+    background-color: rgb(22,183,235);
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+    right: 14px;
+}
+.ProfilePatient_file_right .ProfilePatient_right_content_card_tag .ProfilePatient_right_content_card_name{
+    position: absolute;
+    font-weight: 500;
+    color: #fff;
+    top:22px;
+    right: 20px;    
+}
+
+.ProfilePatient_file_right .ProfilePatient_right_content_card div:nth-child(2) p{
+    font-size: 14px;
+}
+.ProfilePatient_file_right .ProfilePatient_right_content_card div:nth-child(2) p:first-child{
+    font-weight: 500;
+}
+.ProfilePatient_right_content_card_tag{
+    margin-right: 20px;
+}
+
+.ProfilePatient_file_right .ProfilePatient_right_content_card_scroll_container div:last-child{
+    padding: 24px ;
+}
+.ProfilePatient_file_right .ProfilePatient_right_content_card_scroll_container .ProfilePatient_right_content_card div:last-child{
+    padding: 24px 24px 24px 0px ;
+}
+.ProfilePatient_file_right .ProfilePatient_right_content_card_scroll_container div:last-child button{
+    display: block;
+    border-radius: 0.25rem;
+    background-color: #1975dc1a;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    width: 100%;
+    border:none;
+}
+
+.ProfilePatient_file_right .ProfilePatient_right_content_card_scroll_container div:last-child button:hover{
+    background-color: rgb(25,117,220);
+    color: #fff;
+}
+.ProfilePatient_right_content_right_img_tag{
+    position: relative;
+    height: 64px;
+    width: 80px;
+    padding: 0px !important;
+}
+.ProfilePatient_right_content_right_img_tag div:first-child{
+    height: 64px;
+    width: 64px;
+    background-color: rgb(22,184,235);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.ProfilePatient_right_content_right_img_tag div:last-child{
+    position: absolute;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #fff;
+    top:16px;
+    right: 24px;
+    color: #fff;
+}
+
+.ProfilePatient_file_right .ProfilePatient_right_content_right_img_infor{
+    margin-top: 26px;
+}
+.ProfilePatient_right_content_right_img_caution{
+    margin-top: 24px;
+    background-color: rgb(255,247,237);
+    display: flex;
+    align-items: center;
+    padding: 12px;
+
+}
+.ProfilePatient_right_content_right_img_caution p{
+    margin: 0px;
+    font-size: 14px;
+}
+.ProfilePatient_right_content_right_change_infor{
+    padding: 24px;
+    text-align: right;
+}
+.ProfilePatient_right_content_right_change_infor button{
+    padding: 12px 20px;
+}
+
+.ProfilePatient_right_content_right_add_profile{
+    padding: 24px;
+    
+    width: 100%;
+    height: max-content;
+}
+.ProfilePatient_right_content_right_add_profile div{
+    width: 100%;
+    border-bottom: 1px solid rgb(229,231,235);
+    padding-bottom: 16px;
+}
+.ProfilePatient_right_content_right_add_profile div:first-child p
+{
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+
+}
+.ProfilePatient_right_content_right_container_add_profile{
+    padding: 0px 24px 24px 24px;
+    
+}
+.ProfilePatient_right_content_right_container_add_profile label{
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.ProfilePatient_right_content_right_container_add_profile input{
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgb(233,235,238);
+}
+.ProfilePatient_right_content_right_container_add_profile div{
+    margin-top: 12px;
+}
+.ProfilePatient_right_content_right_container_add_profile div:nth-child(4) label{
+    display: inline-block;
+}
+.ProfilePatient_right_content_right_container_add_profile div:nth-child(4) input{
+    width: 14.400px;
+    height: 14.400px;
+    padding: 0px;
+}
+.ProfilePatient_right_content_right_container_add_profile div:nth-child(4) div{
+    display: inline-block;
+    margin-right: 12px;
+    margin-top: 0px;
+}
+.ProfilePatient_right_content_right_container_add_profile div:nth-child(4) p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.ProfilePatient_right_content_right_container_add_profile div:nth-child(5){
+    display: flex;
+}
+.ProfilePatient_right_content_right_container_add_profile div:nth-child(7){
+    display: flex;   
+}
+.ProfilePatient_right_content_right_container_add_profile div:nth-child(7) > div{
+    width: 50%;
+}
+.ProfilePatient_right_content_right_container_add_profile input:focus{
+    outline: none;
+    border: 2px solid rgb(24,144,255);
+}
+.ProfilePatient_right_content_right_container_update_profile_button{
+    margin-top: 30px;
+    text-align: right;
+     
+}
+.ProfilePatient_right_content_right_container_update_profile_button button:nth-child(1) {
+    background-color: #fff;
+    border: none;
+    color: rgb(25,117,220);
+    margin-right: 16px;
+}
+.ProfilePatient_right_content_right_container_update_profile_button button{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+}
+input::placeholder{
+    font-size: 14px;
+}
+.ProfilePatient_history_pay_right .ProfilePatient_right_title_content > div:nth-child(1){
+    display: flex;
+}
+.ProfilePatient_history_pay_right .ProfilePatient_right_title_content input{
+    width: 100%;
+    height: 40px;
+    margin-right: 20px;
+}
+.ProfilePatient_history_pay_right .ProfilePatient_right_title_content button{
+    height: 30px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 1px solid rgb(229,231,235);
+    background-color: #fff;
+}
+.ProfilePatient_history_pay_right .ProfilePatient_right_title_content > div:nth-child(2){
+    height: 560px;
+    border: 1px solid rgb(229,231,235);
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+.ProfilePatient_history_pay_right .ProfilePatient_right_title_content > div:nth-child(2) img{
+    width: 300px;
+    height: 150px;
+}
+.ProfilePatient_history_pay_right .ProfilePatient_right_title_content > div:nth-child(2) > div{
+    display: inline-block;
+    margin-top: 30px;
+}
+.ProfilePatient_history_pay_right .ProfilePatient_right_title_content > div:nth-child(2) p{
+    font-size: 14px;
+}
+.ProfilePatient_account_right .container-fluid {
+    padding: 0px;
+}
+.ProfilePatient_account_right .row > div  > div:nth-child(1)
+{
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+.ProfilePatient_account_right .row > div:first-child{}
+
+.ProfilePatient_account_right .row > div  > div:nth-child(1) p{
+    font-size: 14px;
+}
+
+.ProfilePatient_account_right .row > div  > div:nth-child(1) div:first-child{
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.ProfilePatient_account_right .row > div:nth-child(1)  > div:nth-child(1) p:nth-child(2){
+    font-weight: 500;
+}
+.ProfilePatient_account_right .row > div:nth-child(1)  > div:nth-child(1) div{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+}
+.ProfilePatient_account_right .row > div:nth-child(1)  > div:nth-child(1) div:last-child a{
+    text-decoration: none;
+    font-size: 14px;
+}
+.ProfilePatient_account_right .row > div:nth-child(2) label{
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+
+}
+
+.ProfilePatient_account_right .row > div:nth-child(2) input{
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+.text-red-500{
+    color: red;
+}
+input:focus{
+    outline: none;
+    border: 2px solid rgb(24,144,255);
+}
+input{
+    border: 1px solid rgb(229,231,235);
+}
+
+.ProfilePatient_account_right .row > div:nth-child(2) > div > div div:last-child{
+    text-align: right;
+    margin-top: 24px;
+}
+.ProfilePatient_account_right .row > div:nth-child(2) > div > div:last-child button{
+    padding: 12px 20px;
+    background-color: rgb(209,213,219);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 24px;
+    border: none;
+    border-radius: 4px;
+}
+.ProfilePatient_right_content_right_new_profile{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_right {
+        display: none;
+    }
+    .ProfilePatient_medical_examination_schedule_right .ProfilePatient_right_content_left {
+        width: 100%;
+    }
+ 
+ }

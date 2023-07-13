@@ -1,0 +1,16 @@
+<!-- <div class="book-appointment">
+    <p>Đặt khám nhanh</p>
+    <div class="control-btn">
+        <div class="pre-btn"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="next-btn"><i class="fa-solid fa-angle-right"></i></div>
+        <div class="down-btn"><i class="fa-solid fa-angle-up"></i></div>
+    </div> -->
+<ul class="book-appointment-date">
+    <li *ngFor="let item of scheduleList" (click)="sendDataToTimeFrame(item.id)">
+        <p>{{item.workingDate | date:'EEEE, dd/MM'}}</p>
+        <span>{{item.numberOfTimeFrames}} khung giờ</span>
+    </li>
+    <div class="horizontal-bar"></div>
+</ul>
+<app-time-frame-booking></app-time-frame-booking>
+<!-- </div> -->

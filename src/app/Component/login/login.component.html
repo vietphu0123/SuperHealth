@@ -1,0 +1,104 @@
+
+<div class="spinner-wrap" *ngIf="loading==true">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<app-header></app-header>
+<div class="body_Login">
+    <div class="container body_container">
+        <div class="row">
+            <div class="col-md-7 col-sm-0 body_container-img">
+                <img src="../../../assets/images/img-login.png" alt="mô-tả-ảnh">
+
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="body_container-login_border">
+                    <div class="body_container-login">
+                        <div class="body_container-login-Login_bnt">
+                            <a href="">
+                                <p>
+                                    Đăng Nhập
+                                </p>
+                            </a>
+                            
+                        </div>
+                        <div class="body_container-login-SignUp_bnt">
+                            <a href="">
+                                <p>
+                                    Đăng Ký
+                                </p>
+                            </a>
+                            
+                        </div>
+                    </div>
+                        <form class="body_container-login_form_Login" [formGroup]="validateLogin">
+                            <div class="mb-3">
+                              <label for="username" class="form-label" >Tài khoản</label>
+                              <input type="text" class="form-control" id="username"   formControlName="username" placeholder="Tài khoản" required >
+                              <small *ngIf="validateLogin.controls['username'].touched  &&  validateLogin.hasError('required','username')" class="text-danger">*username is required</small>
+                               
+                            </div>
+                            <div class="mb-3">
+                              <label for="password" class="form-label">Mật khẩu</label>
+                              <input type="password" class="form-control" id="password"  formControlName="password" placeholder="Nhập mật khẩu" required >
+                              <small *ngIf="validateLogin.controls['password'].touched  &&  validateLogin.hasError('required','password')" class="text-danger">*password is required</small>
+                               
+                            </div>
+                            <div class="mb-3">
+                                <div>
+                                    <input class="form-check-input" type="checkbox" name="checkbox" value="false" id="invalidCheck" style="position: static; margin: 0px 6px 0px 0px;" required>
+                                    <label class="form-check-label" for="invalidCheck">
+                                        Ghi nhớ mật khẩu
+                                    </label>
+                                </div>
+                                 <a href="">Quên mật khẩu?</a>
+                              </div>
+                            <button type="button" (click)="submitForm()" class="btn btn-primary" style="margin-bottom: 12px;">Đăng nhập</button>
+                            <button class="btn btn-primary" (click)="tryGoogleLogin()"><img src="../../../assets//images/logo-google.png" style="width: 24px;">Login with Google</button>
+                        </form>
+                         
+
+                        <form class="body_container-login_form_SignUp" [formGroup]="validateRegister">
+                            <div class="mb-3">
+                              <label for="username" class="form-label" >Tên Người Dùng</label>
+                              <input type="text" class="form-control" id="usernameRegister"  formControlName="usernameRegister" placeholder="Tên Người Dùng">
+                              <small *ngIf="validateRegister.controls['usernameRegister'].touched  &&  validateRegister.hasError('required','usernameRegister')" class="text-danger">*username is required</small>
+                              <small *ngIf="validateRegister.controls['usernameRegister'].touched  &&  validateRegister.hasError('pattern','usernameRegister')" class="text-danger">*username is invalid</small>
+                            </div>
+                            <div class="mb-3">
+                              <label for="gmail" class="form-label">Gmail</label>
+                              <input type="email" class="form-control" id="gmailRegister"  formControlName="gmailRegister" placeholder="Nhập gmail" email>
+                              <small *ngIf="validateRegister.controls['gmailRegister'].touched  &&  validateRegister.hasError('required','gmailRegister')" class="text-danger">*username is required</small>
+                              <small *ngIf="validateRegister.controls['gmailRegister'].touched  &&  validateRegister.hasError('email','gmailRegister')" class="text-danger">*email is invaild</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Mật khẩu</label>
+                                <input type="password" class="form-control" id="passwordRegister" formControlName="passwordRegister" placeholder="Nhập mật khẩu">
+                                <small *ngIf="validateRegister.controls['passwordRegister'].touched  &&  validateRegister.hasError('required','passwordRegister')" class="text-danger">*password is required</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Repassword" class="form-label">Nhập lại mật khẩu</label>
+                                <input type="password" class="form-control" id="repasswordRegister"  formControlName="repasswordRegister" placeholder="Nhập lại mật khẩu">
+                                <small *ngIf="validateRegister.controls['repasswordRegister'].touched  &&  validateRegister.hasError('required','repasswordRegister')" class="text-danger">*password is required</small>
+                            </div>
+                            <button type="button" (click)="onRegisterSubmit()" class="btn btn-primary ">Đăng Ký</button>
+                        </form>
+                    
+                    <div class="body_container-login_SignUp">
+                        Chưa có tài khoản?  
+                        <a href>
+                            Đăng ký ngay
+                        </a>
+                    </div>
+                        
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+   
+
+ 
+<app-footer></app-footer>

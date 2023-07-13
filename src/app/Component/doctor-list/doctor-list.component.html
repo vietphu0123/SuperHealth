@@ -1,0 +1,146 @@
+<app-header></app-header>
+
+<div style="margin-top: 50px;" id="slider">
+  <div class="container">
+    <div class="heading-slider">
+      <h1>Đội ngũ<span> Bác sĩ</span></h1>
+      <p>Bạn thấy không khỏe? Hãy để SuperHealth chăm sóc cho bạn!</p>
+    </div>
+    <div class="search">
+      <div class="col-md-9">
+        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" placeholder="Tìm kiếm theo tên bác sĩ, chuyên khoa,..." [(ngModel)]="search"
+          (keypress)="onKeyPress($event)" />
+        <button class="search-btn" (click)="handleSearchChange()">Tìm kiếm</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container list_doctor">
+  <div class="list_doctor-header">
+    <h2>Đặt khám với các bác sĩ hàng đầu Việt Nam</h2>
+    <p>Chủ động chọn lịch hẹn - Đi khám không đợi chờ</p>
+  </div>
+
+  <div class="container doctor-list" *ngIf="doctorLists && doctorLists.length > 0">
+    <div class="container list">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-3 doctor-item ng-star-inserted " *ngFor="let doctorList of doctorLists | slice: 0:displayCount">
+          <div class="item text-center item-10337 no-home-page">
+            <div class="doctor-info">
+              <img class="doctor-image ng-star-inserted" onerror="this.src='assets/icons/doctor-placeholder.svg'"
+                src="{{doctorList.avatar ? doctorList.avatar : '../assets/images/avatarDoctor.png'}}" alt="">
+              <div class="doctor-main-info">
+                <p class="dr-name">Bác sĩ. {{doctorList.doctorName}}</p>
+                <p class="dr-specialty">{{doctorList.specialties}}</p>
+              </div>
+            </div>
+            <div class="doctor-more-info">
+              <p class="introduction-line">{{doctorList.positionName}}</p>
+              <div class="button-group">
+                <button class="btn btn-white btn-shadow ng-star-inserted"
+                  [routerLink]="['/doctorList','doctorInfo', doctorList.id]"> Xem thêm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="list_doctor-btn">
+      <!-- <button *ngIf="!isFullListDisplayed" (click)="showMore()">Xem thêm</button> -->
+
+      <button class="list_doctor-btn-seemore" *ngIf="!isFullListDisplayed" (click)="showMore()">Xem thêm</button>
+    </div>
+
+  </div>
+
+  <div class="noti-null" *ngIf="doctorLists.length <=0">
+    <img src="../assets/images/bg-empty-search.png" alt="">
+    <h5>Không tìm thấy kết quả phù hợp</h5>
+    <p>Rất tiếc, chúng tôi không tìm thấy kết quả nào phù hợp với từ khoá bạn tìm kiếm. Vui lòng thử lại với từ khoá
+      khác.</p>
+
+  </div>
+
+  <div class="list_doctor-footer">
+    <div class="list_doctor-footer-header">
+      <h2 class="list_doctor-footer-header-content">Đội ngũ chăm sóc chuyên nghiệp</h2>
+    </div>
+
+
+    <div class="list_doctor-footer-info">
+      <div class="row list_doctor-footer-boxsizing">
+        <div class="col-md-12 col-lg-6">
+
+          <div class="item ">
+            <div class="media">
+              <div class="media-left">
+                <img alt="icon"
+                  src="https://cdn.jiohealth.com/jio-website/home-page/jio-website-v2.2/assets/icons/smart-clinic/experience.png">
+              </div>
+              <div class="media-body">
+                <h3 class="title">Giàu kinh nghiệm</h3>
+                <p>Đội ngũ bác sĩ Jio Health là những bác sĩ ưu tú Chuyên Khoa I &amp; II, Thạc sĩ, Tiến sĩ với thâm
+                  niên trung bình từ 10 năm kinh nghiệm.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="item">
+            <div class="media">
+              <div class="media-left">
+                <img alt="icon"
+                  src="https://cdn.jiohealth.com/jio-website/home-page/jio-website-v2.2/assets/icons/smart-clinic/distinguished.png">
+              </div>
+              <div class="media-body">
+                <h3 class="title">Chuyên môn cao</h3>
+                <p>Các bác sĩ Jio Health đều đang công tác và giảng dạy tại các bệnh viện uy tín hàng đầu thành phố như
+                  BV Chợ Rẫy, BV Nhân dân Gia Định, BV Nhi Đồng 1 &amp; 2, BV Đại học Y Dược TP.HCM.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="item">
+            <div class="media">
+              <div class="media-left">
+                <img alt="icon"
+                  src="https://cdn.jiohealth.com/jio-website/home-page/jio-website-v2.2/assets/icons/smart-clinic/international.png">
+              </div>
+              <div class="media-body">
+                <h3 class="title">Kinh nghiệm quốc tế</h3>
+                <p>Các bác sĩ Jio Health đều từng có thời gian tu nghiệp tại các nước có nền y học phát triển như Mỹ,
+                  Pháp, Đức, Thái Lan, Singapore.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="item">
+            <div class="media">
+              <div class="media-left">
+                <img alt="icon"
+                  src="https://cdn.jiohealth.com/jio-website/home-page/jio-website-v2.2/assets/icons/smart-clinic/multilingual.png">
+              </div>
+              <div class="media-body">
+                <h3 class="title">Trình độ ngoại ngữ</h3>
+                <p>Các chuyên viên y tế của Jio Health có thể trao đổi với bệnh nhân bằng nhiều ngôn ngữ như tiếng Anh,
+                  tiếng Pháp.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

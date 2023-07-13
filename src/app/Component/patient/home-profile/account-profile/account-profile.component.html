@@ -1,0 +1,83 @@
+<div class="ProfilePatient_account_right">
+    <div class="ProfilePatient_medical_examination_schedule_right">
+        <div class="ProfilePatient_right_title">
+            <h5>
+                Lịch sử thanh toán
+            </h5>
+                
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-md-6 px-2 col-sm-6">
+                    <div>
+                        <div>
+                            Thông tin tài khoản
+                        </div>
+                        <div>
+                            <p>Họ và tên</p>
+                            <p>{{patientInfor.patientName}}</p>
+                        </div>
+                        <div>
+                            <p>Số điện thoại</p>
+                            <p *ngIf="!patientInfor.phoneNumber">---</p>
+                            <p *ngIf="patientInfor.phoneNumber">{{patientInfor.phoneNumber}}</p>
+                        </div>
+                        <div>
+                            <p>Ngày sinh</p>
+                            <p *ngIf="!patientInfor.dateOfBirth">---</p>
+                            <p *ngIf="patientInfor.dateOfBirth">{{patientInfor.dateOfBirth|date:'MMM d, y'}}</p>
+                        </div>
+                        <div>
+                            <p>Địa chỉ</p>
+                            <p *ngIf="!patientInfor.address">---</p>
+                            <p *ngIf="patientInfor.address">{{patientInfor.address}}</p>
+                        </div>
+                        <div>
+                            <p>CMND/CCCD</p>
+                            <p *ngIf="!patientInfor.cmnd">---</p>
+                            <p *ngIf="patientInfor.cmnd">{{patientInfor.cmnd}}</p>
+                        </div>
+                        <div>
+                            <p>Mã BHYT</p>
+                            <p *ngIf="!patientInfor.bhyt">---</p>
+                            <p *ngIf="patientInfor.bhyt">{{patientInfor.bhyt}}</p>
+
+                        </div>
+                        <div>
+                            <a href="">Thay đổi thông tin</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 px-2 col-sm-6">
+                    <div>
+                        <div>
+                            <p>Thay đổi mật khẩu</p>
+                        </div>
+                        <div>
+                            <form #FormChangPassword="ngForm" (submit)="onSubmit(FormChangPassword)">
+                                <div>
+                                    <label for="password">Mật khẩu hiện tại 
+                                        
+                                        <span  class="text-red-500">*</span>
+                                    </label>
+                                    <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Mật khẩu cũ">
+                                </div>
+                                <div>
+                                    <label for="Repassword">Mật khẩu mới
+                                        <span _ngcontent-serverapp-c76="" class="text-red-500">*</span>
+                                    </label>
+                                    <input type="password" id="Repassword" [(ngModel)]="repassword" name="Repassword" placeholder="Mật khẩu mới">
+                                </div>
+                                <div>
+                                    <button type="button" type="submit" >Thay đổi</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,330 @@
+.headPage-container {
+    background: #f2f6f6;
+    background-repeat: no-repeat;
+    padding-top: 70px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .headPage-title {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
+  .page-headPage {
+    display: block;
+  }
+  .headPage {
+    background-color: transparent;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    display: inline-flex;
+    list-style: none;
+  }
+  .headPage-item {
+    font-weight: 500;
+    color: #1f2937;
+    padding-left: 10px;
+  }
+  a {
+    text-decoration: none;
+  }
+  /* CONTENT */
+  .left-content {
+    transform: none;
+    min-height: 451.906px;
+    padding: 80px 0 60px;
+  }
+  .left-sidebar {
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+    min-height: 1px;
+  }
+  .left-sidebar-inside {
+    padding-top: 0px;
+    padding-bottom: 1px;
+    position: static;
+    transform: none;
+    top: 0px;
+    left: 182px;
+  }
+  .profile-sidebar {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .pro-widget-content {
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  .profile-info-widget {
+    display: block !important;
+    text-align: center !important;
+  }
+  
+  .profile-info-widget .booking-doc-img {
+    display: inline-block;
+    width: auto;
+    background-color: #f7f7f7;
+    margin: 0 0 15px !important;
+    padding: 8px;
+    border-radius: 50%;
+  }
+  .booking-doc-img img {
+    height: 120px !important;
+    width: 120px !important;
+    border-radius: 50% !important;
+  }
+  
+  .profile-des-info {
+    overflow: hidden;
+  }
+  .profile-des-info h3 {
+    font-size: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .profile-des-info .patient-details h5 {
+    color: #757575;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dashboard-menu ul {
+    color: #757575;
+    font-size: 14px;
+    line-height: 17px;
+    list-style: none;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+  }
+  .dashboard-menu > ul > li {
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+  }
+  .profile-sidebar .dashboard-menu > ul > li a {
+    color: #757575;
+    display: block;
+    padding: 16px 20px;
+  }
+  .dashboard-menu ul li {
+    line-height: inherit;
+  }
+  
+/* RIGHT */
+
+.widget-profile {
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+.card {
+    border: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+}
+.card-body {
+    padding: 30px;
+}
+.pat-widget-profile .pro-widget-content {
+    padding: 0 0 20px;
+}
+.pro-widget-content {
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+.widget-profile .profile-info-widget {
+    display: block!important;
+    text-align: center!important;
+}
+.widget-profile .profile-info-widget .booking-doc-img {
+    display: inline-block;
+    width: auto;
+    background-color: #f7f7f7;
+    margin: 0 0 15px!important;
+    padding: 8px;
+    border-radius: 50%;
+    
+}
+ .name-patient{
+  color: slateblue; 
+ }
+ 
+.profile-info-widget  .booking-doc-img img {
+    height: 100px!important;
+    width: 100px!important;
+    border-radius: 50%;
+}
+.patient-info {
+    margin-top: 15px;
+}
+.patient-info ul {
+    list-style: none;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+.patient-info ul li {
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    color: #272b41;
+    
+}
+.patient-info ul li span {
+    color: #757575;
+    float: right;
+    font-weight: 400;
+}
+
+
+
+  
+  /* Appointments */
+  .appointments .appointment-list {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    margin: 0 0 20px;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+  }
+  .profile-info-patient {
+    margin-right: auto;
+    text-align: left;
+    display: flex;
+  }
+  .patient {
+    padding-left: 40px;
+  }
+  .appointment-list .profile-info-patient .booking-doc-img img {
+    height: 120px;
+    object-fit: cover;
+    width: 120px;
+    border-radius: 4px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .appointments .appointment-action {
+    display: inline-flex;
+    align-items: center;
+    -webkit-box-align: center;
+  }
+  .appointments .appointment-action a {
+    font-size: 13px;
+  }
+  .bg-info-light {
+    background-color: rgba(2, 182, 179, 0.12) !important;
+    color: #1db9aa !important;
+  }
+  .appointments .appointment-action a + a {
+    margin-left: 5px;
+  }
+  .bg-success-light {
+    background-color: rgba(15, 183, 107, 0.12) !important;
+    color: #26af48 !important;
+  }
+  .bg-danger-light {
+    background-color: rgba(242, 17, 54, 0.12) !important;
+    color: #e63c3c !important;
+  }
+  
+
+  .schedule-pagination {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .schedule-pagination .ngx-pagination {
+    padding: 0 !important;
+  }
+  .schedule-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+
+
+  .modal-content{
+    width: 140%;
+  }
+ /* View detail appointment */
+
+ .booking-success{
+  margin-top: 10px;
+}
+.doctor-infor-head{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.doctor-infor{
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+}
+.text-center-header{
+  font-size: 25px;
+}
+.doctor-img{
+  width: 100px;
+  height: 100px;
+}
+.doctor-booking-content{
+  display: flex;
+
+}
+.doctor-booking-left{
+  width: 50%;
+  height: auto;
+  border-right: 1px solid #F4F4F4;
+}
+.doctor-booking-right{
+  width: 50%;
+  height: auto;
+}
+.item-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.font-medium{
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.modal-footer{
+  display: flex;
+  justify-content: center !important;
+}
+.hiddenform {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.btn-view{
+  text-decoration: none;
+    color: white;
+    width: 100px;
+    height: 35px;
+    background-color: #3f51b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}

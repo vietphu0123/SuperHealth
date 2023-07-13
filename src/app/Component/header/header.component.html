@@ -1,0 +1,79 @@
+<div id="header" *ngIf="!showMe">
+    <div class="container header-content">
+        <div class="menu-btn">
+            <div>
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <div class="logo" style="cursor: pointer;" [routerLink]="['/doctor','specialty']">
+          <p>Super</p><span>Health</span>
+            <!-- <img src="../assets/images/logo.png" alt=""> -->
+        </div>
+        <div class="header-function">
+            <ul class="nav-links">
+                <li>
+                    <a [routerLink]="['/doctor','specialty']">Đặt khám bác sĩ</a>
+                </li>
+                <li><a >Tư vấn trực tuyến</a></li>
+                <li>
+                    <a  [routerLink]="['/doctorList']">Danh sách bác sĩ</a>
+                </li>
+            </ul>
+            <div>
+                <a href="" class="common-btn btn-login-icon"><i class="fa-solid fa-right-to-bracket"></i></a>
+                <a [routerLink]="['/login']" class="common-btn btn-login">Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>
+
+
+<div id="header" *ngIf="showMe" >
+    <div class="container header-content">
+        <div class="menu-btn">
+            <div>
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <div class="logo" style="cursor: pointer;" [routerLink]="['/doctor','specialty']">
+          <p>Super</p><span>Health</span>
+            <!-- <img src="../assets/images/logo.png" alt="" style="cursor: pointer;" [routerLink]="['/doctor','specialty']"> -->
+        </div>
+        <div class="header-function">
+            <ul class="nav-links">
+                <li>
+
+                    <a [routerLink]="['/doctor','specialty']">Đặt khám
+                        bác sĩ</a>
+                </li>
+                <li><a href="">Tư vấn trực tuyến</a></li>
+                <li>
+                    <a    [routerLink]="['/doctorList']" >Danh sách bác sĩ</a>
+                </li>
+            </ul>
+            <!-- <div>
+                <a href="" class="common-btn btn-login-icon"><i class="fa-solid fa-right-to-bracket"></i></a>
+                <a href="http://127.0.0.1:5500/group3_mockproject/Client/Html/LoginForm.html"
+                    class="common-btn btn-login">Đăng nhập</a>
+            </div> -->
+            <div>
+                <span class="user-login"><i class="fa-sharp fa-regular fa-circle-user"></i> <span>{{patientInfor.patientName}}</span>
+                    <i class="fa-solid fa-sort-down"></i>
+                    <ul class="sub-nav-links">
+                        <li><a href="/patient/profile/schedule">Lịch khám</a></li>
+                        <li><a href="/patient/profile/payment">Lịch sử thanh toán</a></li>
+                        <li><a href="/patient/profile/account">Tài Khoản</a></li>
+                        <li><a href="/patient/profile/infor">Hồ sơ</a></li>
+                        <li><a style="display: block;" type="button" class="last-item" (click)="handleClick()">Thoát</a></li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>

@@ -1,0 +1,362 @@
+<app-header></app-header>
+<!-- HEADERPAGE -->
+<div class="headPage-container mat-typography">
+    <div class="container">
+        <div class="col-md-12 col-12 text-center" style="margin:50px;">
+            <h2 class="headPage-title">Thông tin chi tiết</h2>
+            <nav aria-label="headPage" class="page-headPage">
+                <ol class="headPage">
+                    <li class="headPage-item"><a [routerLink]="['/doctor', 'setting']">Cá nhân</a></li>
+                    <li class="headPage-item" aria-current="page">/ Thông tin chi tiết</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- CONTENT -->
+<!-- LEFT -->
+<div class="left-content mat-typography">
+    <div class="container row" style="transform: none; display: flex; margin: auto;">
+        <!-- <div class="row"> -->
+        <!-- <form #form="ngForm" style="transform: none;"> -->
+        <div class="col-md-5 col-lg-4 col-xl-3 left-sidebar">
+            <div class="left-sidebar-inside">
+                <div class="profile-sidebar">
+                    <div class="widget-profile pro-widget-content">
+                        <div class="profile-info-widget">
+                            <a [routerLink]="['/doctor', 'setting']" class="booking-doc-img">
+                                <img src="{{doctorDetail.avatar ? doctorDetail.avatar : '../assets/images/avatarDoctor.png'}}" alt="User Image">
+                            </a>
+                            <div class="profile-des-info">
+                                <h3>{{doctorDetail.doctorName}}</h3>
+                                <div class="patient-details">
+                                    <h5 class="mb-0">{{doctorDetail.positionName}}
+                                        <!-- <span
+                                            *ngFor="let specialty of doctorSpecialty">{{specialty.specialtyName}}</span> -->
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-widget">
+                        <nav class="dashboard-menu">
+                            <ul>
+                                <li class="active">
+                                    <a [routerLink]="['/doctor']">
+                                        <i class="fas fa-calendar-check"></i>
+                                        <span> Đặt lịch</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/doctor','patientList']">
+                                        <i class="fas fa-user-injured"></i>
+                                        <span> Bệnh nhân của tôi</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/doctor', 'setting']">
+                                        <i class="fas fa-user-cog"></i>
+                                        <span> Thiết lập thông tin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/doctor','schedule']">
+                                        <i class="fas fa-user-cog"></i>
+                                        <span> Lịch làm việc</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </form> -->
+        <!-- RIGHT -->
+        <form style="transform: none; display: contents;" #form="ngForm" (ngSubmit)="updateDoctorInfor()">
+            <div class="col-md-7 col-lg-8 col-xl-9 mat-typography">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Thông tin cơ bản</h4>
+                        <div class="row form-row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="change-avatar">
+                                        <div class="profile-img">
+                                            <img src="{{doctorDetail.avatar ? doctorDetail.avatar : '../assets/images/avatarDoctor.png'}}" alt="User Image">
+                                        </div>
+                                        <div class="upload-img">
+                                            <div class="change-photo-btn">
+                                                <span><i class="fa fa-upload"></i> Tải ảnh</span>
+                                                <input (change)="onFileSelected($event)"
+                                                    [(ngModel)]="doctorDetail.avatar" name="avatar" type="file"
+                                                    class="upload">
+                                            </div>
+                                            <small class="form-text text-muted">Cho phép JPG, GIF or PNG. Kích thước
+                                                lớn nhất
+                                                2MB</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Tên người dùng <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" readonly="" name="userName"
+                                        [(ngModel)]="doctorDetail.userName">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" readonly="" name="email"
+                                        [(ngModel)]="doctorDetail.email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Tên bác sĩ <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="doctorName"
+                                        [(ngModel)]="doctorDetail.doctorName">
+                                    <small
+                                        *ngIf="validateNewInfor.controls['doctorName'].touched  &&  validateNewInfor.hasError('required','doctorName')"
+                                        class="text-danger">*Username is required</small>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Số điện thoại</label>
+                                    <input pattern="^(?=.*[1-9])\d+$" type="text" class="form-control"
+                                        name="phoneNumber" [(ngModel)]="doctorDetail.phoneNumber">
+                                    <small
+                                        *ngIf="validateNewInfor.controls['phoneNumber'].touched  &&  validateNewInfor.hasError('required','phoneNumber')"
+                                        class="text-danger">*phoneNumber is required</small>
+                                    <small
+                                        *ngIf="validateNewInfor.controls['phoneNumber'].touched  &&  validateNewInfor.hasError('pattern','phoneNumber')"
+                                        class="text-danger">*phoneNumber is invalid</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Giới tinh</label>
+                                    <select class="form-select form-control" name="gender"
+                                        (change)="changeGender($event)" [value]="doctorDetail.gender">
+                                        <option [value]="gender.value" selected="selected"
+                                            *ngFor="let gender of genderOptions">
+                                            {{gender.label}}
+                                        </option>
+                                    </select>
+                                    <small
+                                        *ngIf="validateNewInfor.controls['gender'].touched  &&  validateNewInfor.hasError('required','gender')"
+                                        class="text-danger">*Username is required</small>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-0">
+                                    <label>Ngày sinh</label>
+                                    <input type="date" class="form-control" name="dateOfBirth"
+                                        [ngModel]="doctorDetail.dateOfBirth | date:'yyyy-MM-dd'"
+                                        (ngModelChange)="doctorDetail.dateOfBirth = $event">
+                                    <small
+                                        *ngIf="validateNewInfor.controls['dateOfBirth'].touched  &&  validateNewInfor.hasError('required','dateOfBirth')"
+                                        class="text-danger">*dateOfBirth is required</small>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-body">
+                        <h4 class="card-title">Địa chỉ chi tiết</h4>
+                        <div class="row form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Thành Phố</label>
+                                    <select id="province" (change)="onProvinceChange()" class="form-select form-control"
+                                        name="province" [(ngModel)]="doctorDetail.province">
+                                        <option disable value="null">-- Chọn tỉnh thành --</option>
+                                        <option [value]="province.code" *ngFor="let province of provinces">{{
+                                            province.name }}</option>
+                                    </select>
+
+                                    <!-- <select *ngIf="doctorDetail.addressCommon  != null" id="province"
+                                        (change)="onProvinceChange()" class="form-select form-control"
+                                        [(ngModel)]="doctorDetail.addressCommon.province" name="province"
+                                        [value]="doctorDetail.addressCommon.privince">
+                                        <option [value]="null">Select</option>
+                                        <option [value]="province.code"
+                                            [selected]="province.code === doctorDetail.addressCommon.privince"
+                                            *ngFor="let province of provinces">{{
+                                            province.name }}</option>
+                                    </select> -->
+                                    <!-- <small
+                                        *ngIf="validateNewInfor.controls['province'].touched  &&  validateNewInfor.hasError('required','province')"
+                                        class="text-danger">*dateOfBirth is required</small> -->
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Quận/Huyện</label>
+
+                                    <select id="district" (change)="onDistrictChange()" class="form-select form-control"
+                                        name="district" [(ngModel)]="doctorDetail.district">
+                                        <option disable value="null">-- Chọn quận huyện --</option>
+                                        <option *ngFor="let district of districts" [value]="district.code">{{
+                                            district.name }}</option>
+                                    </select>
+
+                                    <!-- <select *ngIf="doctorDetail.addressCommon  != null" id="district"
+                                        (change)="onDistrictChange()" class="form-select form-control"
+                                        [(ngModel)]="doctorDetail.addressCommon.district"
+                                        [value]="doctorDetail.addressCommon.district" name="district">
+                                        <option [value]="null">Select</option>
+                                        <option [value]="district.code"
+                                            [selected]="district.code === doctorDetail.addressCommon.district"
+                                            *ngFor="let district of districts">{{
+                                            district.name }}</option>
+                                    </select> -->
+                                    <!-- <small
+                                        *ngIf="validateNewInfor.controls['district'].touched  &&  validateNewInfor.hasError('required','district')"
+                                        class="text-danger">*dateOfBirth is required</small> -->
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Xã</label>
+                                    <select id="ward" (change)="onWardChange()" class="form-select form-control"
+                                        name="ward" [(ngModel)]="doctorDetail.ward">
+                                        <option disable value="null">-- Chọn xã --</option>
+                                        <option *ngFor="let ward of wards" [value]="ward.code">
+                                            {{ ward.name }}
+                                        </option>
+                                    </select>
+
+                                    <!-- <select *ngIf="doctorDetail.addressCommon  != null" id="ward"
+                                        (change)="onWardChange()" class="form-select form-control"
+                                        [(ngModel)]="doctorDetail.addressCommon.ward"
+                                        [value]="doctorDetail.addressCommon.ward" name="ward">
+                                        <option [value]="null">Select</option>
+                                        <option [value]="ward.code"
+                                            [selected]="ward.code === doctorDetail.addressCommon.ward"
+                                            *ngFor="let ward of wards">{{
+                                            ward.name }}</option>
+                                    </select> -->
+                                    <!-- <small
+                                        *ngIf="validateNewInfor.controls['ward'].touched  &&  validateNewInfor.hasError('required','ward')"
+                                        class="text-danger">*dateOfBirth is required</small> -->
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Địa chỉ</label>
+                                    <input type="text" class="form-control" name="address"
+                                        [(ngModel)]="doctorDetail.address">
+                                    <!-- <small
+                                        *ngIf="validateNewInfor.controls['address'].touched  &&  validateNewInfor.hasError('required','address')"
+                                        class="text-danger">*address is required</small> -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Vị trí làm việc</h4>
+                        <div class="experience-info">
+                            <div class="row form-row experience-cont">
+                                <div class="col-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-info mr-md-3 mb-2 mb-md-0">
+                                            {{doctorDetail.positionName}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="add-more">
+                            <a href="#" class="add-experience"><i class="fa fa-plus-circle"></i>
+                                Add More</a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="experience-info">
+                            <div class="row mb-5">
+                                <div class="col-md-12">
+                                    <h4 class="card-title">
+                                        Chuyên Khoa
+                                    </h4>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <button *ngFor="let specialty of doctorSpecialty" type="button" class="btn btn-info"
+                                        style="margin: 5px;">
+                                        {{this.specialty.specialtyName}}</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 submit-btn-bottom">
+                        <button type="submit" class="btn btn-primary prime-btn">Cập nhật thông tin</button>
+                    </div>
+                    <div class="col-md-6">
+                        <a  style="float: right;" href="#changePassModal" class="btn btn-success" data-toggle="modal">
+                            <i class="fa-sharp fa-solid fa-plus"></i>
+                            <span>Thay đổi mật khẩu</span></a>
+                    </div>
+                </div>
+             
+            </div>
+        </form>
+        
+        <!-- </div> -->
+    </div>
+</div>
+
+
+
+
+<!-- Create Modal HTML -->
+<div id="changePassModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form #FormChangPassword="ngForm" (ngSubmit)="changePass(FormChangPassword)">
+                <div class="modal-header">
+                    <h4 class="modal-title">Thay đổi mật khẩu</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label  >Mật khẩu cũ</label>
+                        <input [(ngModel)]="password" type="password" id="password" class="form-control" name="password"  placeholder="Mật khẩu cũ">
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu mới</label>
+                        <input [(ngModel)]="repassword" type="password" id="repassword"  class="form-control"  placeholder="Mật khẩu mới" name="repassword">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-success" value="Đổi">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

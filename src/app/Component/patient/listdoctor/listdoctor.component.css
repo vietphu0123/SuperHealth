@@ -1,0 +1,237 @@
+
+.body_listdoctor{
+    margin-top: 56px;
+}
+
+
+.body_listdoctor_nav{
+    height: 40px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+
+}
+.body_listdoctor_nav ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+
+
+}
+
+.body_listdoctor_nav ul li{
+    margin-right: 10px;
+    font-size: 14px;
+}
+.body_listdoctor_nav_link {
+    color: rgb(209,213,219);
+}
+
+
+.body_listdoctor_padding{
+    padding: 0px !important;
+}
+.body_listdoctor_search{
+    height: 80px;
+    background-color: rgb(25,117,220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.body_listdoctor_search_border{
+    width: 54%;
+    height: 56%;
+}
+.body_listdoctor_search_border div{
+    position: relative;
+    height: 100%;
+}
+.body_listdoctor_search_border input{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    border: none;
+    padding-left: 18px;
+}
+.body_listdoctor_search_border i{
+    position: absolute;
+    z-index: 3;
+    right: 10px;
+    top: 12px;
+    right: 16px;
+    font-size: 20px;
+    color: rgb(25,117,220);
+}
+.body_listdoctor button{
+    width: 400px;
+}
+.body_listdoctor .scrollable-list{
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+.body_listdoctor_body_left_header_search_below .scrollable-list  {
+    max-height: 300px;
+    overflow-y: auto;
+    border-left: #fff;
+    display: block;
+
+}
+.body_listdoctor_body_left_header_search_below .scrollable-list li{
+    border: none;
+}
+.body_listdoctor_body_left_header_search_below_input{
+    width: 100%;
+    margin-bottom: 16px;
+}
+.body_listdoctor_body_left_header_search_below .form-check{
+    margin-bottom: 16px;
+}
+.body_listdoctor_body_left_header_search_below label{
+    width: 100%;
+}
+.form-check-input{
+    padding-left:4px;
+}
+.body_listdoctor_body_left_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.body_listdoctor_body_left_header div{
+    font-weight: 550;
+    font-size: 14px;
+    padding: 12px 0px;
+    width: 100%;
+}
+.body_listdoctor_body_left_header i{
+    height: max-content;
+}
+
+.body_listdoctor_body_left_header > div{
+    cursor: pointer;
+}
+.body_listdoctor_body_right_boder_result{
+    border-left-color: rgb(229,231,235) ;
+    padding: 22px 0px 22px 22px;
+    border: 1px solid  rgb(229,231,235);
+    border-left-color: rgb(229,231,235);
+    border-right-color: #fff;
+}
+.body_listdoctor_body_right_boder_result span{
+    text-decoration: underline;
+
+}
+.body_listdoctor_body_right_boder_result_card
+{
+    display: flex;
+    align-items: center;
+    border: 1px solid ;
+    justify-content: space-between;
+    border-top-color: rgb(229,231,235);
+    border-bottom-color:rgb(229,231,235) ;
+    border-left-color: rgb(229,231,235);
+    border-right-color: #fff;
+
+
+}
+.body_listdoctor_body_right_boder_result_card button{
+    width: 22%;
+}
+.body_listdoctor_body_right_boder_result_card img{
+    width: 120px;
+    height: 120px;
+    margin-right: 16px;
+    border-radius:50% ;
+}
+
+.body_listdoctor_body_right_boder_result_card_information{
+    display: flex;
+    align-items: center;
+    padding: 16px 0px 16px 16px;
+}
+.body_listdoctor_body_right_boder_result_card button{
+    height: 40px;
+}
+.body_listdoctor_body_right_boder_result_card_information a{
+    text-decoration: none;
+    color: black;
+    font-weight: 620;
+    font-size: 18px;
+}
+
+.body_listdoctor_body_right_boder_result_card_information_title a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.body_listdoctor_body_right_boder_result_card_information_title div:nth-child(2){
+    display: flex;
+    margin: 10px 0px;
+}
+
+.body_listdoctor_body_right_boder_result_card_information_title div:nth-child(2) p{
+    margin: 0px;
+    font-size: 15px;
+    margin-right: 12px;
+    padding: 4px 12px 4px 12px;
+    background-color: rgb(243,244,246);
+    border-radius: 14px;
+    font-weight: 500;
+}
+
+.body_listdoctor_body_right_boder_result_card_information_title div:nth-child(3){
+    font-size: 14px;
+}
+
+.body_listdoctor_row_margin{
+    margin-bottom: 120px !important;
+}
+
+.body_listdoctor_body_left_img{
+    margin-top: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+    .body_listdoctor_body_right_boder_result_card{
+        display: block;
+
+    }
+    .body_listdoctor_body_right_boder_result_card {
+        text-align: right;
+
+    }
+    .body_listdoctor_body_right_boder_result_card_information{
+        text-align: left;
+    }
+    .body_listdoctor_body_right_boder_result_card button{
+        width: 162px;
+        margin-bottom: 12px;
+    }
+    .body_listdoctor_search_border {
+        width: 92%;
+    }
+    .body_listdoctor_body_left_img{
+        display: none;
+    }
+ }
+
+
+/* not found */
+.noti-null {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 28rem;
+  margin: auto;
+}
+.noti-null img{
+  width: 200px;
+}
+.noti-null p{
+  text-align: center;
+}

@@ -1,0 +1,223 @@
+<app-header></app-header>
+<!-- HEADERPAGE -->
+<div class="headPage-container mat-typography">
+  <div class="container">
+    <div class="col-md-12 col-12 text-center" style="margin:50px;">
+      <h2 class="headPage-title">Lịch Hẹn</h2>
+      <nav aria-label="headPage" class="page-headPage">
+        <ol class="headPage">
+          <li class="headPage-item"><a [routerLink]="['/doctor', 'setting']">Cá nhân</a></li>
+          <li class="headPage-item" aria-current="page">/ Lịch hẹn</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- CONTENT -->
+<!-- LEFT -->
+<div class="left-content mat-typography">
+  <div class="container" style="transform: none;">
+    <div class="row" style="transform: none;">
+      <div class="col-md-5 col-lg-4 col-xl-3 left-sidebar">
+
+        <div class="left-sidebar-inside">
+          <div class="profile-sidebar">
+            <div class="widget-profile pro-widget-content">
+              <div class="profile-info-widget">
+                <a [routerLink]="['/doctor', 'setting']" class="booking-doc-img">
+                  <img src="{{doctorDetail.avatar ? doctorDetail.avatar : '../assets/images/avatarDoctor.png'}}"
+                    alt="User Image">
+                </a>
+                <div class="profile-des-info">
+                  <h3>{{doctorDetail.doctorName}}</h3>
+                  <div class="patient-details">
+                    <h5 class="mb-0">{{doctorDetail.positionName}}
+                      <!-- <span *ngFor="let specialty of doctorSpecialty" >{{specialty.specialtyName}}</span> -->
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-widget">
+              <nav class="dashboard-menu">
+                <ul>
+                  <li class="active">
+                    <a [routerLink]="['/doctor']">
+                      <i class="fas fa-calendar-check"></i>
+                      <span> Đặt lịch</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/doctor','patientList']">
+                      <i class="fas fa-user-injured"></i>
+                      <span> Bệnh nhân của tôi</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/doctor', 'setting']">
+                      <i class="fas fa-user-cog"></i>
+                      <span> Thiết lập thông tin</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/doctor','schedule']">
+                      <i class="fas fa-user-cog"></i>
+                      <span> Lịch làm việc</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PATIENTS -->
+
+      <div class="col-md-7 col-lg-8 col-xl-9 ">
+        <div class="container">
+          <div *ngIf="patients  != null" class="row">
+            <!-- <i class="material-icons">&#xE8B6;</i> -->
+            <input style=" margin: auto;" [(ngModel)]="search" (input)="handleSearchChange($event)" type="date"
+              class="col-md-6 search-box form-control" placeholder="Tìm kiếm theo ngày&hellip;">
+          </div>
+        </div>
+
+        <div *ngIf="patients  == null">
+          <div class="schedule-pagination">
+            <h1 class="my-pagination">Chưa có bệnh nhân đặt lịch</h1>
+          </div>
+        </div>
+        <div class="appointments" *ngFor="let patient of patients | paginate: {
+                    itemsPerPage: pageSize, currentPage: page, totalItems: total
+                }">
+          <div class="appointment-list">
+            <div class="profile-info-patient">
+              <div>
+                <a href="patient-profile.html" class="booking-doc-img">
+                  <img src="{{appointmentDetails.avatar ? appointmentDetails.avatar : '../assets/images/avatarDoctor.png'}}"
+                    alt="User Image">
+                </a>
+              </div>
+              <div class="profile-des-info patient">
+                <h3><a href="patient-profile.html">{{patient.patientName}}</a></h3>
+                <div class="patient-details">
+                  <h5><i class="far fa-clock"></i> Lịch hẹn: {{patient.workingDay | date: 'dd/MM/yyyy'}} </h5>
+                  <h5><i class="fas fa-calendar-check"></i> Thời gian: {{patient.startTime}} - {{patient.endTime}}</h5>
+                  <h5><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{patient.address}}</h5>
+                  <h5 class="mb-0"><i class="fas fa-phone"></i> Số điện thoại: {{patient.phoneNumber}}</h5>
+                </div>
+              </div>
+            </div>
+            <div class="row" class=" appointment-action">
+              <a (click)="openViewAppointment(patient.appointmentId)" class="btn btn-md bg-info-light col-sm-4"
+                data-toggle="modal" data-target="#viewAppointmentById">
+                <i class="far fa-eye"></i> Xem
+              </a>
+              <a (click)="DoctorApproved(patient.appointmentId)" class="btn btn-md bg-success-light col-sm-4">
+                <i class="fas fa-check"></i> Duyệt
+              </a>
+              <a (click)="DoctorCancelled(patient.appointmentId)" class="btn btn-md bg-danger-light col-sm-4">
+                <i class="fas fa-times"></i> Hủy
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="patients  != null">
+          <div class="schedule-pagination">
+            <pagination-controls previousLabel="Trang trước" nextLabel="Trang sau" (pageChange)="pageChange($event)"
+              class="my-pagination"></pagination-controls>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="viewAppointmentById" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Thông tin chi tiết</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+
+          <div class="container booking-success modal-body">
+              <div class="doctor-infor-head">
+                  <div><img class="doctor-img" src="{{appointmentDetails.avatar ? appointmentDetails.avatar : '../assets/images/avatarDoctor.png'}}" alt=""> </div>
+                  <div class="doctor-infor">
+                    <h4>{{appointmentDetails.patientName}}</h4>
+                    <p>Liên hệ: {{appointmentDetails.phoneNumberF}}</p>
+                  </div>
+                </div>
+              <div class="doctor-booking-content">
+                  
+                  <div class="doctor-booking-left">
+
+
+            <div class="w-full p-4 ng-star-inserted">
+              <p class="font-medium">Thông tin đặt khám</p>
+              <div class="item-wrapper">
+                <p class="label m-0">Mã phiếu khám</p>
+                <p class="value m-0">{{appointmentDetails.appointmentCode}}</p>
+              </div>
+              <div class="flex flex-col">
+                <div class="item-wrapper ng-star-inserted">
+                  <p class="label m-0">STT</p>
+                  <p class="value m-0">{{appointmentDetails.timeSlot}}</p>
+                </div>
+                <p class="font-normal text-sm text-gray-500 leading-17 text-right m-0"></p>
+              </div>
+              <div class="item-wrapper">
+                <p class="label m-0">Ngày khám</p>
+                <p class="value m-0">{{appointmentDetails.date | date: 'dd/MM/yyyy'}}</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="doctor-booking-right">
+            <div class="md:basis-1/2 ng-star-inserted">
+              <div class="w-full p-4 ng-star-inserted">
+                <p class="font-medium "> Thông tin bệnh nhân </p>
+                <div class="item-wrapper">
+                  <p class="label m-0">Bệnh nhân</p>
+                  <p class="value m-0">{{appointmentDetails.patientNameF}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Ngày sinh</p>
+                  <p class="value m-0"> {{appointmentDetails.dateOfBirthF | date: 'dd/MM/yyyy'}} </p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Giới tính</p>
+                  <p class="value m-0"> {{(appointmentDetails.genderF == '1') ? 'Nam' :
+                    (appointmentDetails.gender ==
+                    '2') ? 'Nữ' : 'Khác'}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Mã BHYT</p>
+                  <p class="value value--blue m-0">{{appointmentDetails.bhytF}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Địa chỉ</p>
+                  <p class="value m-0">{{appointmentDetails.patientAddressF}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Ghi chú</p>
+                  <p class="value m-0">{{appointmentDetails.reason}}</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

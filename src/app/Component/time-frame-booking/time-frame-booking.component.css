@@ -1,0 +1,49 @@
+.book-appointment-time {
+    list-style: none;
+    padding: 0;
+}
+
+/* time */
+
+.book-appointment-time li.active {
+    display: block;
+}
+
+.book-appointment-time li {
+    display: none;
+}
+
+.book-appointment-time li .time {
+    display: flex;
+    align-items: center;
+}
+
+.book-appointment-time li .time p {
+    width: 100px;
+    margin: 0;
+}
+
+.book-appointment-time li .time .line {
+    height: 1px;
+    background-color: var(--Gray);
+    flex-grow: 1;
+}
+
+.book-appointment-time li .time i {
+    color: var(--PrimaryColor);
+}
+
+/* time slot */
+.book-appointment-time li .time-slot {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-appointment-time li .time-slot a {
+    display: block;
+    text-align: center;
+}
+
+.book-appointment-time li .time-slot div {
+    padding: 8px 15px;
+}

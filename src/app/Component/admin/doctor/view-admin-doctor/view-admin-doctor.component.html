@@ -1,0 +1,77 @@
+<div class="container booking-success modal-body">
+    <div class="close-btn">
+        <span (click)="closeModal()"><i class="fa-solid fa-x"></i></span>
+    </div>
+    <!-- info doctor -->
+    <div class="doctor-infor-head">
+        <div><img class="doctor-img" [src]="data.avatar" alt=""></div>
+        <div class="doctor-infor">
+            <h4>{{data.doctorName}}</h4>
+            <p>Địa chỉ: {{data.doctorAddress ? data.doctorAddress : '--'}}</p>
+            <p>Liên hệ: {{data.phoneNumber}}</p>
+        </div>
+    </div>
+
+    <div class="doctor-booking-content">
+        <div class="doctor-booking-left">
+
+
+            <!-- info appointment -->
+            <div class="w-full p-4 ng-star-inserted">
+                <p class="font-medium">Thông tin chung</p>
+                <div class="item-wrapper">
+                    <p class="label m-0">Họ tên</p>
+                    <p class="value m-0">{{data.doctorName}}</p>
+                </div>
+                <div class="flex flex-col">
+                    <div class="item-wrapper ng-star-inserted">
+                        <p class="label m-0">Username</p>
+                        <p class="value m-0">{{data.userName}}</p>
+                    </div><!---->
+                    <p class="font-normal text-sm text-gray-500 leading-17 text-right m-0"></p>
+                </div>
+                <div class="item-wrapper">
+                    <p class="label m-0">Email</p>
+                    <p class="value m-0">{{data.email}}</p>
+                </div><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+            </div>
+        </div>
+
+        <!-- info patient -->
+        <div class="doctor-booking-right">
+            <div class="md:basis-1/2 ng-star-inserted">
+                <div class="w-full p-4 ng-star-inserted">
+                    <p class="font-medium ">Thông tin chi tiết</p>
+                    <div class="item-wrapper">
+                        <p class="label m-0">Điện thoại</p>
+                        <p class="value m-0">{{data.phoneNumber}}</p>
+                    </div>
+                    <div class="item-wrapper">
+                        <p class="label m-0">Ngày sinh</p>
+                        <p class="value m-0"> {{data.dateOfBirth ? (data.dateOfBirth | date: 'dd/MM/yyyy') : '--'}} </p>
+                    </div>
+                    <div class="item-wrapper">
+                        <p class="label m-0">Giới tính</p>
+                        <p class="value m-0"> {{(data.gender == '1') ? 'Nam' : (data.gender
+                            ==
+                            '2') ? 'Nữ' : '--'}}</p>
+                    </div>
+                    <div class="item-wrapper">
+                        <p class="label m-0">Vị trí</p>
+                        <p class="value value--blue m-0">{{data.positionName}}</p>
+                    </div>
+                    <div class="item-wrapper">
+                        <p class="label m-0">Chuyên khoa</p>
+
+                        <ul class="value m-0">
+                            <li *ngFor="let item of data.specialtyName">
+                                {{item}}
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

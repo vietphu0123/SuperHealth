@@ -1,0 +1,131 @@
+<!-- 
+<div class="spinner-wrap" *ngIf="loading==true">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+   -->
+  <div class="content-wrap-center">
+      <div class="ProfilePatient_right_content_right ProfilePatient_right_content_right_new_profile" style="width: 40%">
+            <div class="ProfilePatient_right_content_right_add_profile">
+                <div>
+                  <p>Thêm hồ sơ mới</p>
+                </div>
+                
+            </div>
+            <form class="ProfilePatient_right_content_right_container_add_profile" [formGroup]="validateNewInfor" (ngSubmit)="submitForm()">
+                <div>
+                    <label for="patientName">Họ và tên <span class="text-danger">*</span></label>
+                    <input type="text" id="patientName" formControlName="patientName" placeholder="Họ và tên" value=""  required >
+                    <small *ngIf="validateNewInfor.controls['patientName'].touched  &&  validateNewInfor.hasError('required','patientName')" class="text-danger">*Username is required</small>
+                </div>
+                <div>
+                    <label for="phoneNumber">Số điện thoại <span class="text-danger">*</span></label>
+                    <input type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="Số điện thoại" pattern="^(?=.*[1-9])\d+$">
+                    <small *ngIf="validateNewInfor.controls['phoneNumber'].touched  &&  validateNewInfor.hasError('required','phoneNumber')" class="text-danger">*phoneNumber is required</small>
+                    <small *ngIf="validateNewInfor.controls['phoneNumber'].touched  &&  validateNewInfor.hasError('pattern','phoneNumber')" class="text-danger">*phoneNumber is invalid</small>
+                </div>
+                <div>
+                    <label for="dateOfBirth">Ngày sinh <span class="text-danger">*</span></label>
+                    <input type="date" id="dateOfBirth" formControlName="dateOfBirth" placeholder="Ngày sinh" >
+                    <small *ngIf="validateNewInfor.controls['dateOfBirth'].touched  &&  validateNewInfor.hasError('required','dateOfBirth')" class="text-danger">*dateOfBirth is required</small>
+                </div>
+                <div>
+                    <p>Giới tính <span class="text-danger">*</span></p>
+                    <div class="scrollable-list">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="gender" id="exampleRadios1" value="0" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                          Nam
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="gender" id="exampleRadios2" value="1" >
+                        <label class="form-check-label" for="exampleRadios2">
+                          Nữ
+                        </label>
+                      </div>
+                    </div>
+                    
+            
+                </div>
+                <div class="grid lg:grid-cols-3 gap-4">
+                    <div>
+                      <select id="province" (change)="onProvinceChange()" class="select_css" formControlName="province" >
+                        <option disable value="">chọn</option>
+                        <option *ngFor="let province of provinces" [value]="province.code">{{ province.name }}</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select id="district" (change)="onDistrictChange()" class="select_css" formControlName="district" >
+                        <option disable value="">chọn</option>
+                        <option *ngFor="let district of districts" [value]="district.code">{{ district.name }}</option>
+                      </select>
+      
+                    </div>
+                    
+                    <div>
+                      <select id="ward" (change)="onWardChange()" class="select_css" formControlName="ward" required>
+                        <option disable value="">chọn</option>
+                        <option *ngFor="let ward of wards" [value]="ward.code">{{ ward.name }}</option>
+                      </select>
+      
+                    </div>
+                </div>
+                <small *ngIf="validateNewInfor.controls['ward'].touched  &&  validateNewInfor.hasError('required','ward')" class="text-danger">*detail address is required</small>
+                <!-- <small *ngIf="validateNewInfor.controls['ward'].dirty  &&  validateNewInfor.hasError('required','ward')" class="text-danger">*address is required</small> -->
+                <div>
+                    <div>
+                        <label for="address">Địa chỉ cụ thể <span class="text-danger">*</span></label>
+                        <input type="text" id="address" formControlName="address" placeholder="Số nhà tên đường" >
+                        <small *ngIf="validateNewInfor.controls['address'].touched  &&  validateNewInfor.hasError('required','address')" class="text-danger">*address is required</small>
+                    </div>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-4">
+                    <div>
+                        <label for="cmnd">Số CMND/CCCD <span class="text-danger">*</span></label>
+                        <input type="text" id="cmnd" formControlName="cmnd" placeholder="Số CMND hoặc CCCD" pattern="^(?=.*[1-10])\d+$">
+                        <small *ngIf="validateNewInfor.controls['cmnd'].touched  &&  validateNewInfor.hasError('required','cmnd')" class="text-danger">*cmnd is required</small>
+                        <small *ngIf="validateNewInfor.controls['cmnd'].touched  &&  validateNewInfor.hasError('pattern','cmnd')" class="text-danger">*cmnd is invalid</small>
+                   </div>
+                    <div>
+                        <label for="ethnicity">Dân tộc</label>
+                        <input type="text" id="ethnicity" formControlName="ethnicity" placeholder="Dân Tộc" >
+                        <!-- <small *ngIf="validateNewInfor.controls['ethnicity'].dirty  &&  validateNewInfor.hasError('required','ethnicity')" class="text-danger">*ethnicity is required</small> -->
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="bhyt">Mã thẻ BHYT</label>
+                        <input type="text" id="bhyt" formControlName="bhyt" placeholder="Mã số trên thẻ BHYT" >                 
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="email">Email <span class="text-danger">*</span></label>
+                        <input type="email" id="email" formControlName="email" placeholder="Địa chỉ email của bạn" email="true">
+                        <div *ngIf="validateNewInfor.hasError('required','email') && validateNewInfor.controls['email'].touched">
+                          <small class="text-danger">*email is required</small>
+                        </div>
+                        <div *ngIf="validateNewInfor.hasError('email','email') && validateNewInfor.controls['email'].touched">
+                          <small class="text-danger">*email is valid</small>
+                        </div>             
+                        
+                        
+                        
+                    </div>
+                </div>
+                <div>
+              </div>
+                <div class="ProfilePatient_right_content_right_container_update_profile_button">    
+                      <button  type="submit" class="btn btn-primary"  (click)="submitForm()" >
+                        Cập Nhật
+                      </button>
+                      
+      
+                   
+                </div>
+            </form>
+      </div>
+
+  </div>

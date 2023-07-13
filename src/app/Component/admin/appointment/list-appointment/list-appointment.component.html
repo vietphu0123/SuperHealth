@@ -1,0 +1,178 @@
+<h1 class="h3 mb-2 text-gray-800">Lịch khám</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h4 class="m-0 font-weight-bold text-primary">Danh sách lịch khám</h4>
+  </div>
+  <div class="card-body">
+
+    <div class="table-responsive">
+      <div class="specialty-actions">
+        <div class="col-lg-5 col-xl-4">
+          Hiện thị
+          <select (change)="handlePageSizeChange($event)">
+            <option *ngFor="let size of pageSizes" [ngValue]="size">
+              {{ size }}
+            </option>
+          </select>
+          bản ghi
+        </div>
+        <div class="col-lg-5 col-xl-4">
+          <input type="text" class="form-control" placeholder="Tìm kiếm theo mã, tên" [(ngModel)]="search"
+            (input)="handleSearchChange($event)" />
+        </div>
+      </div>
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Mã phiếu khám</th>
+            <th>Tên bác sĩ</th>
+            <th>Tên bệnh nhân</th>
+            <!-- <th>STT</th> -->
+            <th>Ngày khám</th>
+            <th>Lý do</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <!-- <th>Mã chuyên khoa</th> -->
+            <th>Mã phiếu khám</th>
+            <th>Tên bác sĩ</th>
+            <th>Tên bệnh nhân</th>
+            <!-- <th>STT</th> -->
+            <th>Ngày khám</th>
+            <th>Lý do</th>
+            <th>Thao tác</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr *ngFor="let appointment of appointmentList | paginate: {
+                        itemsPerPage: pageSize, currentPage: page, totalItems: total
+                    }">
+            <td>{{appointment.appointmentCode}}</td>
+            <td>{{appointment.doctorName}}</td>
+            <td>{{appointment.patientName }}</td>
+            <!-- <td>{{appointment.TimeSlot}}</td> -->
+            <td>{{appointment.date | date:'dd/MM/yyyy'}}</td>
+            <td>{{appointment.reason }}</td>
+            <td>
+
+
+                <a href="#viewAppointmentById" class="primary btn-view" data-toggle="modal" (click)="openViewAppointment(appointment.id)">
+                  <i class="far fa-eye" style="padding-right: 5px;"></i>
+                </a>
+
+              <!-- <button mat-raised-button color="primary" (click)="openViewAppointment(appointment.id)" data-bs-toggle="modal">
+                <a href="#viewAppointmentById" data-toggle="modal" style="text-decoration: none; color: white;">
+                  <i class="far fa-eye"></i> View
+                </a>
+              </button> -->
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="specialty-pagination">
+      <pagination-controls previousLabel="Trang trước" nextLabel="Trang sau" (pageChange)="pageChange($event)"
+        class="my-pagination"></pagination-controls>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+<!-- View Modal HTML View details appointment -->
+<div id="viewAppointmentById" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Chi tiết đặt lịch</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+
+      <div class="container booking-success modal-body">
+        <!-- info doctor -->
+        <div class="doctor-infor-head">
+          <div><img class="doctor-img" src="" alt="">{{appointmentDetails.avatar}}</div>
+          <div class="doctor-infor">
+            <h4>{{appointmentDetails.doctorName}}</h4>
+            <p>Địa chỉ: {{appointmentDetails.doctorAddress}}</p>
+            <p>Liên hệ: {{appointmentDetails.doctorPhoneNumber}}</p>
+          </div>
+        </div>
+
+        <div class="doctor-booking-content">
+          <div class="doctor-booking-left">
+
+
+            <!-- info appointment -->
+            <div class="w-full p-4 ng-star-inserted">
+              <p class="font-medium">Thông tin đặt khám</p>
+              <div class="item-wrapper">
+                <p class="label m-0">Mã phiếu khám</p>
+                <p class="value m-0">{{appointmentDetails.appointmentCode}}</p>
+              </div>
+              <div class="flex flex-col">
+                <div class="item-wrapper ng-star-inserted">
+                  <p class="label m-0">STT</p>
+                  <p class="value m-0">{{appointmentDetails.timeSlot}}</p>
+                </div><!---->
+                <p class="font-normal text-sm text-gray-500 leading-17 text-right m-0"></p>
+              </div>
+              <div class="item-wrapper">
+                <p class="label m-0">Ngày khám</p>
+                <p class="value m-0">{{appointmentDetails.date | date: 'dd/MM/yyyy'}}</p>
+              </div><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+            </div>
+          </div>
+
+          <!-- info patient -->
+          <div class="doctor-booking-right">
+            <div class="md:basis-1/2 ng-star-inserted">
+              <div class="w-full p-4 ng-star-inserted">
+                <p class="font-medium "> Thông tin bệnh nhân </p>
+                <div class="item-wrapper">
+                  <p class="label m-0">Bệnh nhân</p>
+                  <p class="value m-0">{{appointmentDetails.patientName}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Điện thoại</p>
+                  <p class="value m-0">{{appointmentDetails.phoneNumber}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Ngày sinh</p>
+                  <p class="value m-0"> {{appointmentDetails.dateOfBirth | date: 'dd/MM/yyyy'}} </p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Giới tính</p>
+                  <p class="value m-0"> {{(appointmentDetails.gender == '1') ? 'Nam' : (appointmentDetails.gender ==
+                    '2') ? 'Nữ' : 'Khác'}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Mã BHYT</p>
+                  <p class="value value--blue m-0">{{appointmentDetails.bhyt}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Địa chỉ</p>
+                  <p class="value m-0">{{appointmentDetails.patientAddress}}</p>
+                </div>
+                <div class="item-wrapper">
+                  <p class="label m-0">Ghi chú</p>
+                  <p class="value m-0">{{appointmentDetails.reason}}</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

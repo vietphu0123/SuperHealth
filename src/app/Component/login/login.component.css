@@ -1,0 +1,117 @@
+
+.body_Login{
+    background-color: rgb(249,250,251);
+} 
+.body_container{
+
+    padding:128px 24px 128px 24px;
+}
+.body_container-img{
+    display: flex;
+    place-content: center;
+}
+.body_container-login_border{
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+}
+.body_container-login{
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(229,231,235);
+}
+.body_container-login-Login_bnt{
+    display: inline-block;
+    width: 100%;
+    margin-right: 10px;
+ 
+
+}
+.body_container-login-SignUp_bnt{
+    display: inline-block;
+    width: 100% ;
+    margin-left: 10px;
+}
+.body_container-login-Login_bnt a{
+    text-decoration: none;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    display: block;
+    height: 30px;
+    font-weight: 600;
+    color: rgb(13,110,253);
+    border-bottom: 2px solid rgb(24,144,255);
+}
+.body_container-login-SignUp_bnt a{
+    text-decoration: none;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    display: block;
+    height: 30px;
+    font-weight: 600;
+    color: black;
+}
+.body_container-login-Login_bnt a p{
+    margin: 0px;
+}
+.body_container-login-SignUp_bnt a p{
+    margin: 0px;
+}
+.body_container-login_border button{
+    width: 100%;
+}
+.body_container-login_border .body_container-login_form_Login > :nth-child(3){
+    display: flex;
+    justify-content: space-between;
+}
+.body_container-login_border .body_container-login_form_Login > :nth-child(3) div {
+    display: inline-block;
+}
+.body_container-login_border .body_container-login_form_Login > :nth-child(3) a{
+    text-decoration: none;
+    font-weight: 500;
+}
+.body_container-login_SignUp{
+    padding: 24px;
+    text-align: center;
+    margin-top: 30px;
+    border-top:1px solid rgb(229,231,235);
+}
+.body_container-login_SignUp a{
+    text-decoration: none;
+    font-weight: 550;
+}
+.body_container-login_form_SignUp{
+    display: none;
+}
+
+
+.spinner-wrap{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.spinner-border{
+    width: 60px;
+    height: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+    .body_container-img{
+         display: none;
+    }
+    .body_container-login_border{
+         width: 100%;
+    }
+ 
+ }

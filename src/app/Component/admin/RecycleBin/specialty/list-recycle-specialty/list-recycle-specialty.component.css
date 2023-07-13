@@ -1,0 +1,27 @@
+.specialty-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+.specialty-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.specialty-pagination .ngx-pagination {
+  padding: 0 !important;
+}
+
+.noti-null{
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.noti-null p{
+  font-size: 18px;
+    padding-top: 10px;
+}
